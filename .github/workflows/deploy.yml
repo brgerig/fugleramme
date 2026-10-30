@@ -1,0 +1,92 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main", "arduino_e6" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+#env:
+#  FIRMWARE_REPO: borneo-iot/borneo
+#  FIRMWARE_TAG: release-fw-latest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download firmware from releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Ensure public/firmware directory exists
+          mkdir -p public/firmware
+          cp examples/ee02/arduino_epaper/build/build/esp32.esp32.XIAO_ESP32S3_Plus/arduino_epaper.ino.merged.bin web-flasher/public/firmware/
+
+          # Get the firmware release info
+          RELEASE_INFO=$(gh api repos/${{ env.FIRMWARE_REPO }}/releases/tags/${{ env.FIRMWARE_TAG }})
+
+          # Extract asset names and download URLs, including firmware binaries and manifest indexes
+          ASSETS=$(echo "$RELEASE_INFO" | jq -r '.assets[] | select(.name == "manifests.json" or (.name | endswith(".bin")) or (.name | endswith(".bin.gz")) or (.name | endswith(".manifest.json"))) | [.name, .browser_download_url] | @tsv')
+
+          if [ -z "$ASSETS" ]; then
+            echo "No firmware assets matched the allowlist." >&2
+            echo "$RELEASE_INFO" | jq -r '.assets[].name' >&2
+            exit 1
+          fi
+
+          # Download each asset using its original release filename
+          echo "$ASSETS" | while IFS=$'\t' read -r name url; do
+            echo "Downloading $name"
+            curl -fL -o "public/firmware/$name" "$url"
+          done
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') || github.event_name == 'workflow_dispatch' }}
