@@ -31,7 +31,7 @@ jobs:
         run: |
           # Ensure public/firmware directory exists
           mkdir -p public/firmware
-          cp examples/ee02/arduino_epaper/build/esp32.esp32.XIAO_ESP32S3_Plus/arduino_epaper.ino.merged.bin web-flasher/public/firmware/
+          cp examples/ee02/arduino_epaper/build/esp32.esp32.XIAO_ESP32S3_Plus/arduino_epaper.ino.merged.bin public/firmware/
 
           # Get the firmware release info
           RELEASE_INFO=$(gh api repos/${{ env.FIRMWARE_REPO }}/releases/tags/${{ env.FIRMWARE_TAG }})
