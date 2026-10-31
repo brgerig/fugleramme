@@ -1,0 +1,4 @@
+[submodule "web-flasher"]
+	path = web-flasher
+	url = https://github.com/borneo-iot/web-flasher
+	branch = dependabot/npm_and_yarn/babel/core-7.29.7
