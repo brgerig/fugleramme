@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main", "arduino_e6" ]
+    branches: [ "master" ]
   workflow_dispatch:
 
 permissions:
@@ -14,9 +14,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-#env:
-#  FIRMWARE_REPO: borneo-iot/borneo
-#  FIRMWARE_TAG: release-fw-latest
+env:
+  FIRMWARE_REPO: borneo-iot/borneo
+  FIRMWARE_TAG: release-fw-latest
 
 jobs:
   build:
@@ -31,7 +31,6 @@ jobs:
         run: |
           # Ensure public/firmware directory exists
           mkdir -p public/firmware
-          cp examples/ee02/arduino_epaper/build/esp32.esp32.XIAO_ESP32S3_Plus/arduino_epaper.ino.merged.bin public/firmware/
 
           # Get the firmware release info
           RELEASE_INFO=$(gh api repos/${{ env.FIRMWARE_REPO }}/releases/tags/${{ env.FIRMWARE_TAG }})
