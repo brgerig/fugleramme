@@ -75,13 +75,18 @@ jobs:
         working-directory: web-flasher
         run: npm run build
 
+      - name: Stage files for GitHub Pages path mapping
+        run: |
+          mkdir -p staging/fugleramme/web-flasher
+          cp -r dist/* staging/fugleramme/web-flasher/
+          
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: './staging'
 
   deploy:
     environment:
