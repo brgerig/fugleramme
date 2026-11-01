@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react' // Or whichever framework plugin you us
 
 export default defineConfig({
   base: '/fugleramme/', // Keep this so assets resolve inside your subfolder
+  define: {
+    __APP_VERSION__: JSON.stringify(packageJson.version),
+  },
   plugins: [
     react(),
     // Custom inline plugin to fix the submodule's absolute path
