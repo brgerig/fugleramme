@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react' // Or whichever framework plugin you use
 
 export default defineConfig({
-  base: '/fugleramme/web-flasher/', // Keep this so assets resolve inside your subfolder
+  base: '/fugleramme/', // Keep this so assets resolve inside your subfolder
   plugins: [
     react(),
     // Custom inline plugin to fix the submodule's absolute path
