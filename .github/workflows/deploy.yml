@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Download firmware from releases
         env:
@@ -66,9 +68,11 @@ jobs:
             ${{ runner.os }}-node_modules-
 
       - name: Install dependencies
+        working-directory: web-flasher
         run: npm ci
 
       - name: Build
+        working-directory: web-flasher
         run: npm run build
 
       - name: Setup Pages
