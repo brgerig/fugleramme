@@ -14,7 +14,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
+#env:
   #FIRMWARE_REPO: borneo-iot/borneo
   #FIRMWARE_TAG: release-fw-latest
 
