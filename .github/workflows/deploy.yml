@@ -77,8 +77,8 @@ jobs:
 
       - name: Stage files for GitHub Pages path mapping
         run: |
-          mkdir -p staging/fugleramme/web-flasher
-          cp -r dist/* staging/fugleramme/web-flasher/
+          mkdir -p $GITHUB_WORKSPACE/staging/fugleramme/web-flasher
+          cp -r dist/* $GITHUB_WORKSPACE/staging/fugleramme/web-flasher/
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
