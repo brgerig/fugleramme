@@ -432,8 +432,11 @@ def _update(status: Status) -> str:
         return f'<span class="bad">{status.update_error}</span>{_action("check", "Retry")}'
     if status.update_available:
         # The command stands in for the button: the image is the host's to replace.
+        # A phone gets the link instead, as nobody runs it there.
         install = (
             f'·<pre class="cmd">{html.escape(updates.CONTAINER_COMMAND)}</pre>'
+            f'<a class="host" href="{DOCS_URL}container/#updates" target="_blank" rel="noopener">'
+            "how to update</a>"
             if updates.in_container()
             else _action("update", "Install")
         )
@@ -464,6 +467,68 @@ def _auto_update(settings: Settings) -> str:
         '<form class="block" method="post" action="/admin">'
         f'<input type="hidden" name="{CHECKBOXES}" value="auto_update">'
         f"{_checkbox('auto_update', 'Install new releases automatically', settings.auto_update)}"
+        '<button type="submit">Save</button></form>'
+    )
+
+
+HOTSPOT_PASSWORD = (
+    "The frame creates a hotspot for Wi-Fi setup. It's open unless you set a password."
+)
+
+# The install writes the sudo rule the Wi-Fi setup needs, and is safe to run again.
+INSTALL_COMMAND = (
+    "curl -fsSL https://raw.githubusercontent.com/arnegiacomo/fugleramme/main/install.sh | bash"
+)
+
+# Why the Wi-Fi setup cannot run, as wifi.Setup.start leaves it on the state. HTML.
+_WIFI_PROBLEMS = {
+    "sudo refuses nmcli": (
+        "Fugleramme isn't allowed to change this Pi's Wi-Fi. To allow it, run this on the Pi: "
+        f'<code class="cmd">{INSTALL_COMMAND}</code>'
+    ),
+    "no Wi-Fi": "This Pi has no Wi-Fi.",
+}
+
+
+def _wifi_problem(status: Status, detected: bool) -> str:
+    """Why this frame cannot open a setup hotspot, as HTML, or "" if it can."""
+    if not detected:
+        return "Needs an Inky panel connected."
+    state = status.wifi
+    if state is None or state.available:
+        return ""
+    return _WIFI_PROBLEMS.get(state.problem, html.escape(state.problem))
+
+
+def _wifi_field(settings: Settings, status: Status, detected: bool) -> str:
+    """The Wi-Fi setup (#308): its switch and the hotspot's password. Only the Pi's own
+    service with an Inky on it runs one, so anywhere else there is nothing to offer."""
+    if not updates.can_reboot():
+        return ""
+    problem = _wifi_problem(status, detected)
+    label = "Start Wi-Fi setup when the frame is offline"
+    if problem:
+        return (
+            "<h2>Wi-Fi setup</h2>"
+            f'<div class="block off">{_checkbox("wifi_setup", label, False, True)}'
+            f'<p class="note warn">{problem}</p></div>'
+        )
+    state = status.wifi
+    open_now = (
+        f'<p class="note">Wi-Fi setup is running. Join {html.escape(state.name)} to use it.</p>'
+        if state and state.up
+        else ""
+    )
+    password = _text_field(
+        "hotspot_password",
+        f"Hotspot password {_hint(HOTSPOT_PASSWORD)}",
+        settings.hotspot_password,
+    ).replace("<input ", '<input minlength="8" maxlength="63" ', 1)
+    return (
+        "<h2>Wi-Fi setup</h2>"
+        '<form class="block" method="post" action="/admin">'
+        f'<input type="hidden" name="{CHECKBOXES}" value="wifi_setup">'
+        f"{_checkbox('wifi_setup', label, settings.wifi_setup)}{password}{open_now}"
         '<button type="submit">Save</button></form>'
     )
 
@@ -1113,6 +1178,7 @@ def page(
         ),
         update=_update(status),
         auto_update=_auto_update(settings),
+        wifi=_wifi_field(settings, status, detected),
         panel=f"detected · {glass}" if detected else "not detected",
         detector_name=KINDS[settings.detector_kind].removesuffix(" station(s)"),
         detector_link=_detector_link(settings),

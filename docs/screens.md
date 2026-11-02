@@ -67,6 +67,33 @@ ssh <user>@<host>.local
 sudo apt install --no-install-recommends chromium cage
 ```
 
+`cage` draws a mouse pointer in the middle of the screen, even with no mouse
+plugged in, and the page can't hide it. A cursor theme whose cursors are a
+single transparent pixel does:
+
+```bash
+sudo mkdir -p /usr/share/icons/invisible/cursors
+sudo python3 - <<'EOF'
+import struct
+# An Xcursor file: a header, one table-of-contents entry and one transparent 1x1 image.
+IMAGE, SIZE = 0xFFFD0002, 1
+header = b"Xcur" + struct.pack("<III", 16, 0x10000, 1)
+toc = struct.pack("<III", IMAGE, SIZE, 28)
+chunk = struct.pack("<IIIIIIIII", 36, IMAGE, SIZE, 1, 1, 1, 0, 0, 0) + struct.pack("<I", 0)
+open("/usr/share/icons/invisible/cursors/default", "wb").write(header + toc + chunk)
+EOF
+for name in left_ptr arrow pointer hand1 hand2 text xterm watch wait progress crosshair grab grabbing; do
+  sudo ln -sf default /usr/share/icons/invisible/cursors/$name
+done
+printf '[Icon Theme]\nName=invisible\n' | sudo tee /usr/share/icons/invisible/index.theme
+mkdir -p ~/.icons/default
+ln -sfn /usr/share/icons/invisible/cursors ~/.icons/default/cursors
+```
+
+The browser picks the theme up through `XCURSOR_THEME` in the service below.
+`cage` loads the theme called `default` no matter what that says, which is
+what the last two lines are for.
+
 Then a service, so it comes up with the Pi. `PAMName` and `TTYPath` are what
 give the browser a login session and a seat on the screen, which is the part
 that is missing on Lite:
@@ -85,7 +112,7 @@ TTYPath=/dev/tty1
 TTYReset=yes
 TTYVHangup=yes
 StandardInput=tty-force
-Environment=XDG_RUNTIME_DIR=/run/user/%U
+Environment=XCURSOR_THEME=invisible
 ExecStart=/usr/bin/cage -- /usr/bin/chromium --kiosk --ozone-platform=wayland --noerrdialogs --disable-infobars http://localhost:8080/
 Restart=always
 RestartSec=5
@@ -210,8 +237,16 @@ goes wrong, it writes an error message on the panel instead.
    [for the XIAO EE02](https://micropython.org/download/SEEED_XIAO_ESP32S3/))
 2. Set your Wi-Fi credentials and Fugleramme host in `config.py`. A
    frame served over HTTPS on port 443 is fetched over TLS.
-3. Upload `main.py` and `config.py` to the board (e.g. with
+3. Upload `main.py`, `boot.py` and `config.py` to the board (e.g. with
    [mpremote](https://docs.micropython.org/en/latest/reference/mpremote.html))
+
+`boot.py` runs on every boot before `main.py`. It is what lets the panel
+update its own program: set `FIRMWARE` in `config.py` to a URL serving the
+panel's latest program (as plain file, no sign-in or redirect), and the panel
+checks it on its wakes. A new program is staged, and after a restart it gets
+one trial wake; if the panel reaches the frame cleanly on it, the update is
+kept, otherwise the board goes back to the program it had before.
+Leave `FIRMWARE` at `None` and nothing is downloaded.
 
 Contributed by [Lorenz Schmid](https://github.com/lorenzschmid). Tested on
 a 13.3" panel with a XIAO EE02.

@@ -55,6 +55,10 @@ Use **Image > Flatten Image** first.
 
 If you use Claude Code, the repo ships a `plate-review` skill that does the cutting and the halo from a small spec, then opens a review page where you can compare it to the original and come with feedback. Type `/plate-review` in the repo and give it the scan url. See `tools/platereview/`. Contributed by [erendrake](https://github.com/erendrake).
 
+### Or let an agent take it end to end
+
+[fugleramme-artkit](https://github.com/N-Soder/fugleramme-artkit) is a Python tool you drive from an agent: it finds the birds missing for your country, sources a plate and its licence, cuts it, checks it for the faults reviews have caught before, and imports it with this repo's tools. You approve each step in its review UI. By [N-Soder](https://github.com/N-Soder).
+
 ## Add the bird to a style
 
 Use the artwork tool to give a finished cut-out a BirdNET-compatible filename,
@@ -86,6 +90,8 @@ Run `uv run python tools/add_bird.py --help` for options such as `--style`,
 ## Box the bird
 
 The frame renders bird sizes based on real mass, so it needs to know what part of an image is a bird. On a plate carrying several birds or foliage, the bird would be rendered very small.
+
+A long bill, tail, legs or outstretched wings would make the bird too small, so leave the outer part of them outside the bounding box. But don't overdo it, or the opposite happens.
 
 `add_bird` tries to spot the bird and draw a bounding box. Then it opens an editor in your browser so you can adjust any inaccuracies and compare it to other birds. (It autosaves your changes)
 
