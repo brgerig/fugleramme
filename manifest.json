@@ -9,7 +9,7 @@
                 "chipFamily": "ESP32-S3",
                 "parts": [
                     {
-                        "path": "/firmware/arduino_epaper.ino.merged.bin",
+                        "path": "/ee02_firmware/arduino_epaper.ino.merged.bin",
                         "offset": 0
                     }
                 ]
