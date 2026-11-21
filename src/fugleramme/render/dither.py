@@ -37,6 +37,8 @@ _CONTRAST = 1.15
 _FADE = 4
 _HALO = 12
 _HALO_REACH = 32
+# `_pop` goes through the page this many rows at a time: in float64 a row is eight times its size.
+_BAND = 64
 
 PALETTE_6 = [
     tuple(int(s * SATURATION + d * (1.0 - SATURATION)) for s, d in zip(sat, desat, strict=True))
@@ -55,20 +57,29 @@ def _palette_image() -> Image.Image:
     return pal
 
 
-def _boost(rgb: np.ndarray) -> np.ndarray:
-    return _PIVOT + (rgb * _LIFT - _PIVOT) * _CONTRAST
+def _boost(rgb: np.ndarray, lift: np.ndarray | float = _LIFT) -> np.ndarray:
+    return _PIVOT + (rgb * lift - _PIVOT) * _CONTRAST
 
 
 def _pop(image: Image.Image) -> Image.Image:
     """Darken the birds so pale plumage takes ink. The paper and the halos keep
     their tone, or the halos would ring the birds."""
-    rgb = np.asarray(image.convert("RGB"), np.float64)
+    rgb = np.asarray(image.convert("RGB"))
     paper = np.array(PANEL_PAPER, np.float64)
-    dist = np.linalg.norm(rgb - paper, axis=2)
+    bands = [slice(top, top + _BAND) for top in range(0, rgb.shape[0], _BAND)]
+    # A channel at a time, here and below: across an axis of three numpy works pixel by pixel.
+    dist = np.concatenate(
+        [np.sqrt(sum((rgb[rows, :, c] - paper[c]) ** 2 for c in range(3))) for rows in bands]
+    )
     halo = _reach(dist <= 1, dist <= _HALO, _HALO_REACH) > 0
-    keep = np.maximum(np.exp(-dist / _FADE), halo)[..., None]
-    out = _boost(rgb) + keep * (paper - _boost(paper))
-    return Image.fromarray(np.clip(np.rint(out), 0, 255).astype(np.uint8))
+    out = np.empty_like(rgb)
+    back = paper - _boost(paper)
+    for rows in bands:
+        keep = np.maximum(np.exp(-dist[rows] / _FADE), halo[rows])
+        for c in range(3):
+            boosted = _boost(rgb[rows, :, c], _LIFT[c])
+            out[rows, :, c] = np.clip(np.rint(boosted + keep * back[c]), 0, 255)
+    return Image.fromarray(out)
 
 
 def dither(image: Image.Image) -> Image.Image:

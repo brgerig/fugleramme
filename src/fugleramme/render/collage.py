@@ -34,7 +34,7 @@ from pathlib import Path
 from typing import NamedTuple
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 
 from ..names import canonical, drawable_keys, image_for, normalize
 from ..source import Source
@@ -54,6 +54,7 @@ from .page import (
     mark_room,
     stamp,
     text_mask,
+    text_room,
     trim,
 )
 from .paper import PAD, process_sprite
@@ -117,10 +118,16 @@ def _scaled(img: Image.Image, max_dim: int, flip: bool) -> Image.Image:
 def _footprint(alpha: Image.Image) -> np.ndarray:
     """Opaque area as a bool array (True = keep clear), eroded so birds nestle
     into each other's (invisible on paper) halos. Their bodies still can't."""
-    mask = alpha.point(lambda a: 255 if a > _ALPHA_CUTOFF else 0)
-    eroded = np.asarray(mask.filter(ImageFilter.MinFilter(_OVERLAP_PX * 2 + 1)), dtype=bool)
+    solid = np.asarray(alpha) > _ALPHA_CUTOFF
+    height, width = solid.shape
+    # Eroded by a square: its rows, then its columns. The edge repeats outward, so a
+    # bird that runs off its plate keeps its footprint up to the edge.
+    reach = range(_OVERLAP_PX * 2 + 1)
+    edged = np.pad(solid, _OVERLAP_PX, mode="edge")
+    rows = np.logical_and.reduce([edged[k : k + height] for k in reach])
+    eroded = np.logical_and.reduce([rows[:, k : k + width] for k in reach])
     # A bird thinner than the erosion would reserve nothing and be packed over.
-    return eroded if eroded.any() else np.asarray(mask, dtype=bool)
+    return eroded if eroded.any() else solid
 
 
 def _grow(mask: np.ndarray, px: int) -> np.ndarray:
@@ -248,7 +255,7 @@ def _layout(
     name_px: int,
     label_text: Callable[[str], str],
     layout: str,
-    mask_of: _Mask = text_mask,
+    mask_of: _Mask = text_room,
     pin: _Pin | None = None,
 ):
     """Shrink the set until every bird, name included, fits, then bisect back
@@ -259,12 +266,14 @@ def _layout(
     chosen = packing.layout_of(layout)
     art, centre_at = _held(pin, alphas[pin.entry], flips[pin.entry]) if pin else (None, (0, 0))
 
-    @cache  # a midpoint often lands back on a size already rasterized
-    def rasterize(px: int) -> tuple[list[Image.Image], int]:
-        if not font_key:
-            return [], 0
-        font = fonts.load(font_key, px)  # only the size is packed; the draw pass re-rasterizes
-        return [mask_of(label_text(names[i]), font, False) for i in order], round(px * 0.35)
+    @cache  # one font per size. Only the size is packed; the draw pass re-rasterizes
+    def font_at(px: int) -> ImageFont.FreeTypeFont:
+        assert font_key is not None
+        return fonts.load(font_key, px)
+
+    @cache  # a midpoint often lands back on a size already measured
+    def label_of(px: int, i: int) -> Image.Image:
+        return mask_of(label_text(names[i]), font_at(px), False)
 
     @cache  # the pinned bird only changes with its name's size
     def held(px: int) -> _Sprite:
@@ -277,20 +286,32 @@ def _layout(
         # Its name keeps its usual place; the gap holds the neighbours off both.
         return _spaced(named or _Sprite(pin.entry, pin.dim, art), round(pin.dim * SPOTLIGHT_GAP))
 
+    # Footprints never overlap, so a set with more of them than paper cannot fit, and
+    # the packer would only find that out by walking the whole page. Weighing a set
+    # makes every sprite, so it stops once an attempt is light enough to pack.
+    crowded = True
+
     def attempt(shrink: float):
+        nonlocal crowded
         px = max(MIN_LABEL_PX, round(name_px * shrink)) if font_key else 0
-        labels, spacing = rasterize(px)
-        sprites = []
-        for n, i in enumerate(order):
+
+        def sprite(i: int) -> _Sprite:
             if pin and i == pin.entry:
-                sprites.append(held(px))
-                continue
+                return held(px)
             dim = max(24, int(base * shrink * weights[i]))
             mask = _footprint(_scaled(alphas[i], dim, flips[i]))
-            sprites.append(
-                _with_label(i, dim, mask, labels[n], spacing) if font_key else _Sprite(i, dim, mask)
-            )
-        anchor = _at(sprites[0].art_at, 1, centre_at) if pin else None
+            if not font_key:
+                return _Sprite(i, dim, mask)
+            return _with_label(i, dim, mask, label_of(px, i), round(px * 0.35))
+
+        # Made as the packer takes them: a pack that fails never asks for the rest.
+        sprites: Iterable[_Sprite] = (sprite(i) for i in order)
+        if crowded:
+            sprites = list(sprites)
+            crowded = sum(int(s.mask.sum()) for s in sprites) > width * height
+        if crowded:
+            return None
+        anchor = _at(held(px).art_at, 1, centre_at) if pin else None
         placed = chosen.pack(sprites, width, height, anchor)
         if placed is None:
             return None
@@ -341,9 +362,7 @@ _LAYOUTS_MAX = 8
 
 def _placements(
     key: tuple,
-    arts: list[Image.Image],
-    names: list[str],
-    ratios: list[float],
+    kept: list[tuple[str, Path]],
     flips: list[bool],
     width: int,
     height: int,
@@ -353,7 +372,7 @@ def _placements(
     layout: str,
     margin: Edges,
     mask_of: _Mask,
-    spotlit: tuple[int, tuple[float, float]] | None = None,
+    spotlight: str | None = None,
 ) -> tuple[tuple[_Placed, ...], int]:
     """Pack the page, or return the cached packing. A kiosk locked to the panel
     packs identically to it - only `scale` and the paper differ - so whichever
@@ -363,6 +382,14 @@ def _placements(
         hit = _layouts.get(key)
         if hit is not None:
             return hit
+
+        # Only the silhouettes are held through the pack; the draw pass decodes
+        # each plate as it draws it, so the full plates are never all in memory.
+        alphas = [trim(path).getchannel("A") for _, path in kept]
+        # Mass sizes the bird; this sizes the plate it is drawn on.
+        ratios = [span_ratio(path, a.size) for (_, path), a in zip(kept, alphas, strict=True)]
+        names = [name for name, _ in kept]
+        spotlit = _spotlit(kept, alphas, spotlight)
 
         # Pack inside the margin but size off the whole page, so only a set that
         # doesn't fit has to shrink.
@@ -390,7 +417,6 @@ def _placements(
             share = min(SPOTLIGHT_SHARE * ratios[index], _MAX_SHARE)
             pin = _Pin(index, round(share * min(box)), centre)
             order = [index, *order]
-        alphas = [img.getchannel("A") for img in arts]
         args = (names, alphas, order, weights, flips, base, *box)
 
         placed, used_px = _layout(*args, font_key, name_px, label_text, layout, mask_of, pin)
@@ -496,15 +522,12 @@ def _draw_birds(
     label_text: Callable[[str], str],
     layout: str,
     margin: Edges,
-    mask_of: _Mask = text_mask,
+    mask_of: _Mask = text_room,
     spotlight: str | None = None,
 ) -> tuple[tuple[_Placed, ...], int]:
     """Pack the birds into a `pack` box and draw them at `origin`, `scale`
     times larger, labels reserved but not drawn. Returns the placements and
     the label size they packed at."""
-    arts = [trim(path) for _, path in kept]
-    # Mass sizes the bird; this sizes the plate it is drawn on.
-    ratios = [span_ratio(path, art.size) for (_, path), art in zip(kept, arts, strict=True)]
     width, height = pack
 
     names = [name for name, _ in kept]
@@ -523,9 +546,7 @@ def _draw_birds(
     )
     placed, used_px = _placements(
         key,
-        arts,
-        names,
-        ratios,
+        kept,
         flips,
         width,
         height,
@@ -535,11 +556,11 @@ def _draw_birds(
         layout,
         margin,
         mask_of,
-        _spotlit(kept, arts, spotlight),
+        spotlight,
     )
 
     for p in placed:
-        art = _scaled(arts[p.index], max(1, round(p.dim * scale)), flips[p.index])
+        art = _scaled(trim(kept[p.index][1]), max(1, round(p.dim * scale)), flips[p.index])
         at = _at(p.at, scale, origin)
         corner = (at[0] - PAD, at[1] - PAD)
         proc = process_sprite(art, corner, textured=textured)
@@ -548,14 +569,14 @@ def _draw_birds(
 
 
 def _spotlit(
-    kept: list[tuple[str, Path]], arts: list[Image.Image], spotlight: str | None
+    kept: list[tuple[str, Path]], alphas: list[Image.Image], spotlight: str | None
 ) -> tuple[int, tuple[float, float]] | None:
     """The spotlit entry's index and where its bird is on the plate, if it is on the page."""
     names = [name for name, _ in kept]
     if spotlight not in names:
         return None
     index = names.index(spotlight)
-    return index, bird_centre(kept[index][1], arts[index].size)
+    return index, bird_centre(kept[index][1], alphas[index].size)
 
 
 def _stamp_labels(

@@ -4,6 +4,14 @@ so switching layouts is not answered from the cache."""
 
 from __future__ import annotations
 
+import math
+import os
+import sys
+from collections import Counter
+from pathlib import Path
+from typing import NamedTuple
+from unittest.mock import patch
+
 import numpy as np
 import pytest
 from PIL import Image, UnidentifiedImageError
@@ -38,6 +46,156 @@ def test_a_packed_page_never_overlaps_and_never_clips(layout):
 @pytest.mark.parametrize("layout", sorted(LAYOUTS))
 def test_a_set_that_cannot_fit_is_reported_rather_than_squeezed(layout):
     assert LAYOUTS[layout].pack(_sprites(4), 100, 60) is None
+
+
+@pytest.mark.parametrize("layout", sorted(LAYOUTS))
+def test_a_packer_takes_the_sprites_once_and_in_order(layout):
+    """The size search makes each sprite as the packer asks for it."""
+    pack = LAYOUTS[layout].pack
+    whole, lazy = pack(_sprites(), 500, 400), pack(iter(_sprites()), 500, 400)
+    assert whole is not None and lazy is not None
+    assert [(s.index, x, y) for s, x, y in lazy] == [(s.index, x, y) for s, x, y in whole]
+
+
+def test_the_spiral_takes_the_first_free_place_on_its_walk():
+    """Against the walk done one position at a time with nothing but the box test."""
+    width, height = 240, 180
+    yy, xx = np.ogrid[-1:1:40j, -1:1:56j]
+    disc = xx**2 + yy**2 <= 1
+    sprites = [_Sprite(n, 0, disc[: 40 - 3 * n, : 56 - 4 * n]) for n in range(10)]
+
+    occ = np.zeros((height, width), dtype=bool)
+    expected = []
+    for sprite in sprites:
+        h, w = sprite.mask.shape
+        for px, py in packing._ring(width / 2, height / 2, math.hypot(width, height)):
+            x, y = int(px - w / 2), int(py - h / 2)
+            on_page = x >= 0 and y >= 0 and x + w <= width and y + h <= height
+            if on_page and not (occ[y : y + h, x : x + w] & sprite.mask).any():
+                break
+        occ[y : y + h, x : x + w] |= sprite.mask
+        expected.append((x, y))
+
+    placed = packing.spiral(sprites, width, height)
+    assert placed is not None
+    assert [(x, y) for _sprite, x, y in placed] == expected
+
+
+class _Pack(NamedTuple):
+    """One call to the packer: the size of each footprint made since the call before,
+    how many sprites it took, the paper it had and whether they all found a place."""
+
+    made: list[int]
+    taken: int
+    paper: int
+    fit: bool
+
+
+@pytest.fixture
+def packs(monkeypatch):
+    """The spiral as the layout "watched", with every pack it is asked for noted."""
+    noted: list[_Pack] = []
+    made: list[int] = []
+    footprint = collage._footprint
+
+    def weighed(alpha):
+        mask = footprint(alpha)
+        made.append(int(mask.sum()))
+        return mask
+
+    def pack(sprites, width, height, anchor=None):
+        taken = []
+        placed = packing.spiral((taken.append(s) or s for s in sprites), width, height, anchor)
+        noted.append(_Pack(made.copy(), len(taken), width * height, placed is not None))
+        made.clear()
+        return placed
+
+    monkeypatch.setattr(collage, "_footprint", weighed)
+    monkeypatch.setitem(packing.LAYOUTS, "watched", packing.LAYOUTS["spiral"]._replace(pack=pack))
+    return noted
+
+
+def test_a_pack_that_fails_makes_no_sprite_past_the_one_with_no_place(tmp_path, packs):
+    """Hollow frames weigh next to nothing, so every size reaches the packer, and none
+    goes inside another, so the first sizes run out of page part of the way through."""
+    art = tmp_path / "frame.png"
+    frame = Image.new("RGBA", (200, 200), (40, 40, 40, 255))
+    frame.paste((0, 0, 0, 0), (10, 10, 190, 190))
+    frame.save(art)
+    count = 12
+    render_collage(
+        [(f"Genus species{n}", art) for n in range(count)],
+        (800, 600),
+        show_names=False,
+        layout="watched",
+    )
+
+    # The first set is made whole to be weighed. Every set after it is made as it is taken.
+    failed = [pack for pack in packs[1:] if not pack.fit]
+    assert failed and packs[-1].fit
+    assert all(len(pack.made) == pack.taken for pack in failed)
+    assert any(pack.taken < count for pack in failed)
+
+
+def test_a_set_with_more_footprint_than_paper_never_reaches_the_packer(crowded, packs):
+    count = 40
+    render_collage(crowded(count), (800, 600), show_names=False, layout="watched")
+
+    first = packs[0]
+    assert sum(first.made[:count]) > first.paper  # the birds start out larger than the page
+    assert len(first.made) > count  # so that set was weighed and never packed
+    assert sum(first.made[-count:]) <= first.paper  # and the first to be packed was not
+
+
+def _plate(call) -> Path:
+    """The file an `Image.open` call was for, however it was handed over."""
+    fp = call.args[0] if call.args else call.kwargs["fp"]
+    return Path(fp if isinstance(fp, str | os.PathLike) else fp.name)
+
+
+def test_a_plate_is_decoded_once_to_pack_and_once_to_draw(tmp_path):
+    """Once and kept would hold every decoded plate for the whole render, and a page
+    whose layout is cached has nothing to pack."""
+    entries = []
+    for n in range(5):
+        art = tmp_path / f"bird{n}.png"
+        Image.new("RGBA", (200, 150), (40, 40, 40, 255)).save(art)
+        entries.append((f"Genus species{n}", art))
+
+    with patch.object(Image, "open", side_effect=Image.open) as opened:
+        render_collage(entries, (500, 400), show_names=False)
+        packed = Counter(_plate(call) for call in opened.call_args_list)
+        render_collage(entries, (500, 400), show_names=False)
+        both = Counter(_plate(call) for call in opened.call_args_list)
+
+    assert packed == {art: 2 for _name, art in entries}
+    assert both == {art: 3 for _name, art in entries}
+
+
+def _calls(work) -> int:
+    """How many functions `work` calls, Python's and C's alike."""
+    count = 0
+
+    def note(_frame, event, _arg):
+        nonlocal count
+        count += event in ("call", "c_call")
+
+    before = sys.getprofile()
+    sys.setprofile(note)
+    try:
+        work()
+    finally:
+        sys.setprofile(before)
+    return count
+
+
+def test_a_page_is_laid_out_without_a_call_per_candidate_place(crowded):
+    """The spiral's walk over this page is 77,000 places, for each bird at each size
+    the search tries. One at a time in Python that is millions of calls. With arrays
+    the page takes 140,000, and 420,000 the first time a page of its size is packed,
+    to list the places."""
+    entries = crowded(20)
+    assert _calls(lambda: render_collage(entries, (800, 600))) < 1_000_000
 
 
 def test_the_layout_is_part_of_the_collage_cache_key(crowded):

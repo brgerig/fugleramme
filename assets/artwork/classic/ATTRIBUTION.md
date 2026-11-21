@@ -27,13 +27,14 @@ Volumes 1-5, from the Commons category
 [The Birds of Europe (Gould)](https://commons.wikimedia.org/wiki/Category:The_Birds_of_Europe_(Gould))
 and the [Internet Archive](https://archive.org/details/birdsEuropeIVGoul), public domain (PD-old-70-expired); *The Birds of Asia*, with **Richard Bowdler
 Sharpe** (1850-1883), from the Commons category
-[The Birds of Asia (John Gould)](https://commons.wikimedia.org/wiki/Category:The_Birds_of_Asia_(John_Gould))
+[The Birds of Asia (John Gould)](https://commons.wikimedia.org/wiki/Category:The_Birds_of_Asia_(John_Gould)),
+the [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/item/115342)
 and the [University of Kansas](https://digital.lib.ku.edu/ku-gould),
 public domain (PD-Art, PD-old-100); *The Birds of New Guinea* (1875-1888), with
 **William Hart** and **Richard Bowdler Sharpe**, Biodiversity Heritage Library scans on
 Wikimedia Commons, public domain; and *The Birds of Australia* (1840-1848),
 illustrated by **John and Elizabeth Gould** and **Henry Constantine Richter**,
-scans from Smithsonian Libraries via [BHL](https://www.biodiversitylibrary.org/), [University of Kansas](https://digital.lib.ku.edu/ku-gould), and [Project Gutenberg / Internet Archive](https://www.gutenberg.org/ebooks/62524),
+scans from Smithsonian Libraries via [BHL](https://www.biodiversitylibrary.org/), [University of Kansas](https://digital.lib.ku.edu/ku-gould), the [State Library of NSW](https://collection.sl.nsw.gov.au/record/74VK6kaN0JMg), and [Project Gutenberg / Internet Archive](https://www.gutenberg.org/ebooks/62524),
 public domain, and rawpixel's scan of the 1972 facsimile edition on
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bird_illustration_by_Elizabeth_Gould_for_Birds_of_Australia,_digitally_enhanced_from_rawpixel%27s_own_facsimile_book327.jpg) (CC BY-SA 4.0); *A Century of Birds from the Himalaya Mountains* (1831-1832), drawn on stone
 by **Elizabeth Gould**, via the [Internet Archive](https://archive.org/details/centurybirdsfro00Goul); and *The Birds of Great Britain* (1862-1873), with **Henry Constantine Richter**,
@@ -57,7 +58,11 @@ and the Internet Archive; the *Proceedings of the Zoological Society of London*
 *Lahore to Yarkand* by **George Henderson** and **Allan O. Hume** (1873); *A Monograph of the Turdidae*
 by **Henry Seebohm**, edited by **R. B. Sharpe** (1898-1902);
 *A monograph of the Capitonidæ, or scansorial barbets* by **C. H. T. Marshall** and
-**G. F. L. Marshall** (1871); and *The Birds of Australia* by **Gregory M. Mathews**, vol. 3
+**G. F. L. Marshall** (1871); *A Monograph of the Alcedinidae, or Family of Kingfishers* by
+**R. B. Sharpe** (1868-1871), Ernst Mayr Library scans via the
+[Biodiversity Heritage Library](https://www.biodiversitylibrary.org/item/137827); *The Avifauna of Laysan and the Neighbouring Islands* by **Walter Rothschild**
+(1893-1900), Smithsonian Libraries scan via the
+[Internet Archive](https://archive.org/details/avifaunaLaysannplatRoth); and *The Birds of Australia* by **Gregory M. Mathews**, vol. 3
 (1913-1914), Smithsonian Libraries scans via the
 [Internet Archive](https://archive.org/details/birdsaustralia3math).
 Public domain (PD-old-70-expired; Keulemans died 1912); the *Onze vogels* scans held
@@ -121,7 +126,9 @@ and American Game Birds* (National Geographic Society, 1918), with text by
 (US copyright expired; Fuertes died in 1927).
 Also his plates for **F. E. L. Beal**'s *Birds of California in Relation to the Fruit Industry*,
 Parts I and II (U.S. Biological Survey Bulletins 30 and 34, 1907-1910), via the Internet Archive
-([Part I](https://archive.org/details/birdsofcaliforni30beal), [Part II](https://archive.org/details/bulletinbiologic3238unit)).
+([Part I](https://archive.org/details/birdsofcaliforni30beal), [Part II](https://archive.org/details/bulletinbiologic3238unit)),
+and for his *Food of Our More Important Flycatchers* (Bulletin 44, 1912), National Agricultural Library scan via the
+[Internet Archive](https://archive.org/details/foodofourmoreimp44beal).
 Public domain (US Federal Government work).
 And paintings of his in the U.S. Fish and Wildlife Service's [FWS Library](https://www.fws.gov/library),
 public domain.
@@ -135,7 +142,7 @@ public domain (PD-US).
 
 **Hines** - Wildlife illustrations by **Bob Hines** (Robert W. Hines, 1912-1994) for the **U.S. Fish and Wildlife Service**, from the Commons category [Robert W. Hines](https://commons.wikimedia.org/wiki/Category:Robert_W._Hines). Public domain (US Federal Government work). Manifest key: `hines`.
 
-**Cassin** - *Illustrations of the Birds of California, Texas, Oregon, British and Russian America* by **John Cassin** (Philadelphia: J. B. Lippincott & Co., 1862), plates drawn by **George G. White**, put on stone by **William E. Hitchcock**, lithographed, printed and colored by **J. T. Bowen**, Biodiversity Heritage Library scans from the Commons category [Illustrations of the birds of California, Texas, Oregon, British and Russian America](https://commons.wikimedia.org/wiki/Category:Illustrations_of_the_birds_of_California,_Texas,_Oregon,_British_and_Russian_America); and Cassin's birds for the *Narrative of the Expedition of an American Squadron to the China Seas and Japan* (Perry expedition, vol. 2, 1856), lithographed by **William E. Hitchcock**, from the [Wellcome Collection](https://wellcomecollection.org/) and Smithsonian Libraries scans via the [Internet Archive](https://archive.org/details/narrativeofexped02perry). Public domain (PD-scan / PD-old-70-expired). Manifest key: `cassin`.
+**Cassin** - *Illustrations of the Birds of California, Texas, Oregon, British and Russian America* by **John Cassin** (Philadelphia: J. B. Lippincott & Co., 1862), plates drawn by **George G. White**, put on stone by **William E. Hitchcock**, lithographed, printed and colored by **J. T. Bowen**, Biodiversity Heritage Library scans from the Commons category [Illustrations of the birds of California, Texas, Oregon, British and Russian America](https://commons.wikimedia.org/wiki/Category:Illustrations_of_the_birds_of_California,_Texas,_Oregon,_British_and_Russian_America) and University of Pittsburgh Library System scans via the [Internet Archive](https://archive.org/details/illustrationsofb00cass); and Cassin's birds for the *Narrative of the Expedition of an American Squadron to the China Seas and Japan* (Perry expedition, vol. 2, 1856), lithographed by **William E. Hitchcock**, from the [Wellcome Collection](https://wellcomecollection.org/) and Smithsonian Libraries scans via the [Internet Archive](https://archive.org/details/narrativeofexped02perry). Public domain (PD-scan / PD-old-70-expired). Manifest key: `cassin`.
 
 **Finch-Davies** - *The game-birds and water-fowl of South Africa* by **Boyd Horsbrugh** (Witherby & Co., London, 1912), plates by **Claude Gibney Finch-Davies** (1875-1920), from the Commons category [The game-birds and water-fowl of South Africa (1912)](https://commons.wikimedia.org/wiki/Category:The_game-birds_and_water-fowl_of_South_Africa_(1912)). Public domain (PD-scan / PD-old-70-expired). Manifest key: `finchdavies`.
 
@@ -157,6 +164,10 @@ Public domain. Manifest key: `legge`.
 **Elliot** - *The New and Heretofore Unfigured Species of the Birds of North America* by **Daniel Giraud Elliot** (1869), plates drawn by **Joseph Wolf** and others, lithographed by **C. P. Tholey**, printed by **Bowen & Co.**, Biodiversity Heritage Library scan on the [Internet Archive](https://archive.org/details/newheretoforeun1elli); and *A Monograph of the Phasianidae* (1870-1872), plates after **Joseph Wolf** lithographed by **Joseph Smit**, from the Commons category [A monograph of the Phasianidae - Elliot](https://commons.wikimedia.org/wiki/Category:A_monograph_of_the_Phasianidae_-_Elliot). Public domain (PD-old-70-expired; Wolf died 1899). Manifest key: `elliot`.
 
 **Dawson** - *The Birds of California* by **William Leon Dawson** (San Diego: South Moulton Company, 1923), color plates by **Allan Brooks**, Biodiversity Heritage Library scan on the [Internet Archive](https://archive.org/details/birdsofcaliforni02daws). Public domain (published in the US before 1929; Brooks died 1946). Manifest key: `dawson`.
+
+**Malherbe** - *Monographie des picidées* by **Alfred Malherbe** (Metz, 1859-1862), hand-coloured lithographs by **Mesnel**. Harvard Museum of Comparative Zoology, Ernst Mayr Library scan via the Biodiversity Heritage Library on the [Internet Archive](https://archive.org/details/Monographiedespt418Malh). Public domain. Manifest key: `malherbe`.
+
+**Holmes** - *Birds of the West* by **Charles Edgar Holmes** (Fremont, Neb.: Hammond & Stephens, 1907), colour plates signed "B.H.", Smithsonian Libraries scan on the [Internet Archive](https://archive.org/details/birdsofwestaccou00holm). Public domain (published in the US before 1929). Manifest key: `holmes`.
 
 **Werner** - plates drawn by **Jean-Charles Werner** for his *Atlas des oiseaux d'Europe*, lithographed by **Langlumé**. Scans from the **Iconographia Zoologica** collection of the **University of Amsterdam** Special Collections (Artis Library), via the Commons category [Iconographia Zoologica](https://commons.wikimedia.org/wiki/Category:Iconographia_Zoologica), and Natural History Museum Library, London scans via the [Internet Archive](https://archive.org/details/lesoiseauxdeurop01wern). Public domain (Commons: public domain). Manifest key: `werner`.
 
@@ -211,13 +222,19 @@ CC BY 2.0. Manifest key: `jardine`.
 
 **Ridgway** - plates after watercolours by **Robert Ridgway** in *Our Native Birds of Song and Beauty* by **Henry Nehrling**, Volume I (Milwaukee: George Brumder, 1893), whose colour plates are after paintings by Ridgway, **A. Goering** and **Gustav Muetzel**. Cornell University Library scan via the [Internet Archive](https://archive.org/details/cu31924084820350). Public domain (published in the US before 1929). Manifest key: `ridgway`.
 
-**Bonaparte** - *Iconografia della fauna italica per le quattro classi degli animali vertebrati* by **Charles Lucien Bonaparte** (1832-1841), hand-coloured lithographs, via the [Internet Archive](https://archive.org/details/Iconografiadellt1c1Bona). Public domain. Manifest key: `bonaparte`.
+**Bonaparte** - *Iconografia della fauna italica per le quattro classi degli animali vertebrati* by **Charles Lucien Bonaparte** (1832-1841), hand-coloured lithographs, via the [Internet Archive](https://archive.org/details/Iconografiadellt1c1Bona); and his *American Ornithology; or, The Natural History of Birds Inhabiting the United States, not given by Wilson* (1825-1833), plates after **Titian Ramsay Peale** engraved by **Alexander Lawson**, National Gallery of Art scans (CC0) via [Wikimedia Commons](https://commons.wikimedia.org/). Public domain. Manifest key: `bonaparte`.
 
 **Smit** - plates by **Joseph Smit** from *The Ibis* (1894), printed by **Mintern Bros.**, via the [Internet Archive](https://archive.org/details/ibis661894188994brit), and from the *Proceedings of the Zoological Society of London* (1883), via the [Internet Archive](https://archive.org/details/proceedingsofgen83zool). Public domain (Smit died 1929). Manifest key: `smit`.
 
 **Emory** - *Report on the United States and Mexican boundary survey* (1857-1859), directed by **William H. Emory**, with ornithology by **Spencer Fullerton Baird**. Missouri Botanical Garden Library scan via [Internet Archive / BHL](https://archive.org/details/mobot31753002023650). Public domain. Manifest key: `emory`.
 
+**Pacific Railroad Reports** - bird plates in the *Reports of Explorations and Surveys, to Ascertain the Most Practicable and Economical Route for a Railroad from the Mississippi River to the Pacific Ocean*, vols. 6 and 10, with ornithology by **Spencer Fullerton Baird**, hand-coloured lithographs, via the Internet Archive ([vol. 6](https://archive.org/details/reportsofexplora61857unit), [vol. 10](https://archive.org/details/reportsofexplora10unit)). Public domain. Manifest key: `prr`.
+
+**Sagra** - the birds (*Oiseaux*, by **Alcide d'Orbigny**) of *Histoire physique, politique et naturelle de l'île de Cuba* by **Ramón de la Sagra**, hand-coloured plates, via the [Internet Archive](https://archive.org/details/histoirephysiqu3sagr). Public domain. Manifest key: `sagra`.
+
 **Baird** - *The Birds of North America* by **Spencer F. Baird**, **John Cassin** and **George N. Lawrence** (Philadelphia: J. B. Lippincott & Co., 1860), atlas of hand-coloured lithographs by **Bowen & Co.**, Smithsonian Libraries scan via the [Internet Archive](https://archive.org/details/birdsofnorthamer1860bair). Public domain (No Copyright - United States). Manifest key: `baird`.
+
+**Lawrence** - plates for papers by **George N. Lawrence** in the *Annals of the Lyceum of Natural History of New-York* (1852), hand-coloured lithographs, via the [Internet Archive](https://archive.org/details/annalsoflyceumof51852lyce). Public domain. Manifest key: `lawrence`.
 
 **Reed** - *The Bird Book* by **Chester A. Reed** (Worcester, Mass.: C. K. Reed, 1914). Prelinger Library scan via the [Internet Archive](https://archive.org/details/birdbookillustra00reedrich). Public domain (published in the US before 1929; Reed died 1912). Manifest key: `reed`.
 
@@ -250,3 +267,11 @@ CC BY 2.0. Manifest key: `jardine`.
 **Nuttall** - *A Popular Handbook of the Birds of the United States and Canada* by **Thomas Nuttall**, revised and annotated by **Montague Chamberlain** (1903), chromolithographs. American Museum of Natural History Library scan via the [Internet Archive](https://archive.org/details/popularhandbook00nutt). Public domain (published in the US before 1929). Manifest key: `nuttall`.
 
 **Lilford** - *Coloured Figures of the Birds of the British Islands* issued by **Lord Lilford** (1885-1897), chromolithographs after **Archibald Thorburn** and others. American Museum of Natural History Library scans via the Biodiversity Heritage Library on the [Internet Archive](https://archive.org/details/colouredfigureso05lilf). Public domain. Manifest key: `lilford`.
+
+**Frohawk** - *Aves Hawaiienses: The Birds of the Sandwich Islands* by **Scott B. Wilson** and **A. H. Evans** (London: R. H. Porter, 1890-1899), plates by **Frederick William Frohawk** (1861-1946). Smithsonian Libraries scan via the [Internet Archive](https://archive.org/details/AvesHawaiienses00Wils). Public domain (PD-old-70-expired). Manifest key: `frohawk`.
+
+**Hardwicke** - *Illustrations of Indian Zoology* by **John Edward Gray** (1830-1835), from the collection of **Thomas Hardwicke**, lithographed by **Benjamin Waterhouse Hawkins** and printed by **W. Day**. Scans via the [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/item/172892) and the [Internet Archive](https://archive.org/details/IllustrationsIn1Gray). Public domain. Manifest key: `hardwicke`.
+
+**Sydney Bird Painter** - bird watercolours of 1791-1792 by the anonymous artist known as the **Sydney Bird Painter**, from an album held by the **State Library of New South Wales**, scans in the Commons category [Collection 27: Drawings of birds chiefly from Australia, 1791-1792](https://commons.wikimedia.org/wiki/Category:Collection_27:_Drawings_of_birds_chiefly_from_Australia,_1791-1792). Public domain. Manifest key: `sydneybirdpainter`.
+
+**Gosse** - *Illustrations of the Birds of Jamaica* by **Philip Henry Gosse** (London: John Van Voorst, 1849), plates drawn and lithographed by Gosse. Smithsonian Libraries scan via the [Internet Archive](https://archive.org/details/Illustrationsbi00Goss). Public domain. Manifest key: `gosse`.

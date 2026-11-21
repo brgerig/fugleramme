@@ -43,13 +43,13 @@ from urllib.parse import parse_qs, urlencode, urlparse
 from .. import __version__, buttons, e6, modes, updates, wifi
 from ..languages import namer
 from ..panel import Panel, resolution_of, to_glass
-from ..render.fonts import cut
+from ..render.fonts import FONTS_DIR, TITLE_CUT
 from ..render.page import banded
 from ..render.paper import paper_tile
 from ..settings import Settings, SettingsStore, merged
 from ..source import Source, Unavailable
 from ..status import MAT_TEST_SECONDS, Frame, MatTest, Status, under_test
-from . import LOGIN, LOGOUT, STATIC_DIR, admin, portal
+from . import BASE_PATH, LOGIN, LOGOUT, STATIC_DIR, admin, portal
 
 log = logging.getLogger(__name__)
 
@@ -90,6 +90,7 @@ MAX_BODY = 1024 * 1024  # what BirdNET-Go's API takes; a settings form is bytes
 FILES = {
     "/": ("kiosk.html", HTML),
     "/index.html": ("kiosk.html", HTML),
+    "/plain": ("plain.html", HTML),
     "/admin.css": ("admin.css", "text/css; charset=utf-8"),
     # What a phone or tablet saves to its home screen. iOS asks for the touch icon
     # at the root even on a page that does not link it.
@@ -103,10 +104,11 @@ FILES = {
 }
 
 
+@functools.cache
 def _title_font() -> bytes:
     """The title face of the portal and the admin: Cormorant Garamond, the plates'
     engraved display italic, cut to the one word it sets."""
-    return cut("cormorant", portal.TITLE)
+    return (FONTS_DIR / TITLE_CUT).read_bytes()
 
 
 @functools.cache
@@ -114,6 +116,14 @@ def paper_png() -> bytes:
     buffer = io.BytesIO()
     paper_tile().save(buffer, format="PNG")
     return buffer.getvalue()
+
+
+@functools.lru_cache(maxsize=2)
+def _etag(body: bytes) -> str:
+    """A body's ETag, kept for the last two sent. The page is megabytes and is asked for
+    again unchanged, and bytes remember their own hash, so the same object costs no pass
+    over it."""
+    return f'"{hashlib.md5(body).hexdigest()}"'
 
 
 def _key(settings: Settings) -> bytes:
@@ -148,7 +158,7 @@ def _retry_after(status: int) -> dict[str, str] | None:
 def _set_cookie(value: str, seconds: int) -> str:
     # No Secure: the frame is http://<pi>:8080 and the flag would drop the cookie
     # on every LAN install. Lax keeps it off another site's cross-site POST.
-    return f"{COOKIE}={value}; Max-Age={seconds}; Path=/; HttpOnly; SameSite=Lax"
+    return f"{COOKIE}={value}; Max-Age={seconds}; Path={BASE_PATH or '/'}; HttpOnly; SameSite=Lax"
 
 
 def _banded_png(ctx: modes.Context) -> bytes:
@@ -207,6 +217,22 @@ def make_handler(
         # a served page is not mistaken for the detector having come back.
         degraded = False
 
+        def parse_request(self):
+            """Takes the base path off the request, so a proxy need not."""
+            if not super().parse_request():
+                return False
+            if not BASE_PATH:
+                return True
+            if self.path.split("?", 1)[0] == BASE_PATH:
+                self.send_response(308)
+                self.send_header("Location", BASE_PATH + "/" + self.path[len(BASE_PATH) :])
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return False
+            if self.path.startswith(BASE_PATH + "/"):
+                self.path = self.path[len(BASE_PATH) :]
+            return True
+
         def log_message(self, fmt, *args):
             log.debug("%s %s", self.address_string(), fmt % args)
 
@@ -227,7 +253,7 @@ def make_handler(
 
         def _send_cached(self, body: bytes, content_type: str):
             # no-cache + ETag lets an unchanged refresh return a bodyless 304.
-            etag = f'"{hashlib.md5(body).hexdigest()}"'
+            etag = _etag(body)
             if self.headers.get("If-None-Match") == etag:
                 self.send_response(304)
                 self.send_header("ETag", etag)
@@ -269,13 +295,13 @@ def make_handler(
             """A browser is sent to the login page; anything else is told plainly.
             The admin's own fetches land here when a session runs out mid-page."""
             if "text/html" not in self.headers.get("Accept", ""):
-                self._send(401, b"sign in at /admin/login", "text/plain")
+                self._send(401, f"sign in at {BASE_PATH}{LOGIN}".encode(), "text/plain")
                 return
             self._redirect(LOGIN)
 
         def _redirect(self, location: str, cookie: str = ""):
             self.send_response(303)
-            self.send_header("Location", location)
+            self.send_header("Location", BASE_PATH + location)
             if cookie:
                 self.send_header("Set-Cookie", cookie)
             self.send_header("Content-Length", "0")

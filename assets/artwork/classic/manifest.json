@@ -87,6 +87,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVSpotted_Sandpiper.jpg"
   },
+  "birds/aechmophorus-occidentalis.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n174/mode/1up"
+  },
   "birds/aegithalos-caudatus-2.webp": {
     "source": "vonwright",
     "url": "https://www.rawpixel.com/image/8864445/long-tailed-tit-1828-wilhelm-von-wright"
@@ -130,6 +134,10 @@
   "birds/agelaius-phoeniceus.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-67-red-winged-starling.jpg"
+  },
+  "birds/agelaius-tricolor.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:388_I._Nuttall%27s_Starling_-_2._Yellow-headed_Troopial_-_3._Bullock%27s_Oriole.jpg"
   },
   "birds/aix-galericulata.webp": {
     "source": "dorbigny",
@@ -290,6 +298,18 @@
   "birds/andropadus-importunus.webp": {
     "source": "levaillant",
     "url": "https://commons.wikimedia.org/wiki/File:Andropadus_importunus_-_1796-1808_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBA01_IZ16400045.tif"
+  },
+  "birds/anhinga-anhinga-2.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr06audu/page/n589/mode/1up"
+  },
+  "birds/anhinga-anhinga-3.webp": {
+    "source": "vieillot",
+    "url": "https://commons.wikimedia.org/wiki/File:Plotus_melanogaster_-_1825-1834_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBA01_IZ18000029.tif"
+  },
+  "birds/anhinga-anhinga.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:316_Black-bellied_Darter.jpg"
   },
   "birds/anous-stolidus.webp": {
     "source": "gould",
@@ -503,6 +523,14 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:Aquila_Imperialis_by_John_Gould.jpg"
   },
+  "birds/archilochus-alexandri-2.webp": {
+    "source": "cassin",
+    "url": "https://archive.org/details/illustrationsofb00cass/page/n197/mode/1up"
+  },
+  "birds/archilochus-alexandri.webp": {
+    "source": "gould",
+    "url": "https://commons.wikimedia.org/wiki/File:MonographTrochi3Goul_0072.jpg"
+  },
   "birds/archilochus-colubris.webp": {
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/Category:Birds_of_New_York_(1912)#/media/File:Annual_report_(1912)_(18431069441).jpg"
@@ -559,6 +587,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVTurnstone.jpg"
   },
+  "birds/arremonops-rufivirgatus.webp": {
+    "source": "lawrence",
+    "url": "https://archive.org/details/annalsoflyceumof51852lyce/page/n604/mode/1up"
+  },
   "birds/artamus-leucorynchus.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/15042"
@@ -607,9 +639,17 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeILittle_Owl.jpg"
   },
+  "birds/auriparus-flaviceps.webp": {
+    "source": "lawrence",
+    "url": "https://archive.org/details/annalsoflyceumof51852lyce/page/n604/mode/1up"
+  },
   "birds/aythya-affinis.webp": {
     "source": "audubon",
     "url": "https://archive.org/details/birdsofamericafr06audu/page/n416/mode/1up"
+  },
+  "birds/aythya-americana.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr06audu/page/n409/mode/1up"
   },
   "birds/aythya-collaris-2.webp": {
     "source": "audubon",
@@ -907,6 +947,10 @@
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/13986"
   },
+  "birds/calamospiza-melanocorys.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:390_I._Lark_Finch_-_2._Prairie_Finch_-_3._Brown_Song_Sparrow.jpg"
+  },
   "birds/calandrella-brachydactyla.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIIShort-toed_Lark.jpg"
@@ -1095,6 +1139,10 @@
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/Category:Birds_of_New_York_(Eaton)#/media/File:Annual_report_(1909)_(14776306752).jpg"
   },
+  "birds/caprimulgus-asiaticus.webp": {
+    "source": "hardwicke",
+    "url": "https://www.biodiversitylibrary.org/page/45959694"
+  },
   "birds/caprimulgus-europaeus-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Magnus_von_Wright_-_Caprimulgus_europaeus,_Sphinx_ligustri.jpg"
@@ -1107,6 +1155,14 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIEuropean_Goatsucker.jpg"
   },
+  "birds/caprimulgus-indicus.webp": {
+    "source": "hardwicke",
+    "url": "https://www.biodiversitylibrary.org/page/45959694"
+  },
+  "birds/caprimulgus-macrurus.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/48200524"
+  },
   "birds/caprimulgus-pectoralis.webp": {
     "source": "levaillant",
     "url": "https://commons.wikimedia.org/wiki/File:Caprimulgus_pectoralis_-_1796-1808_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBA01_IZ16700045.tif"
@@ -1115,9 +1171,25 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIRed-collared_Goatsucker.jpg"
   },
+  "birds/cardellina-canadensis-2.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
+  },
   "birds/cardellina-canadensis.webp": {
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:5_Bonaparte%27s_Flycatcher.jpg"
+  },
+  "birds/cardellina-pusilla-2.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr02audu/page/n35/mode/1up"
+  },
+  "birds/cardellina-pusilla-3.webp": {
+    "source": "dawson",
+    "url": "https://archive.org/details/birdsofcaliforni01daws/page/n760/mode/1up"
+  },
+  "birds/cardellina-pusilla.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
   },
   "birds/cardinalis-cardinalis-2.webp": {
     "source": "audubon",
@@ -1243,6 +1315,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVRingDottrell.jpg"
   },
+  "birds/charadrius-semipalmatus.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr05audu/page/n302/mode/1up"
+  },
   "birds/charadrius-vociferus-2.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/kildeer-plover"
@@ -1291,6 +1367,18 @@
     "source": "siebold",
     "url": "https://archive.org/details/faunajaponicasi4sieb/page/n282"
   },
+  "birds/chondestes-grammacus-2.webp": {
+    "source": "bonaparte",
+    "url": "https://commons.wikimedia.org/wiki/File:Alexander_Lawson_after_Titian_Ramsay_Peale,_Female_Crow_Blackbird,_Orange-Crowned_Warbler,_Lark_Finch,_NGA_53858.jpg"
+  },
+  "birds/chondestes-grammacus-3.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr03audu/page/n105/mode/1up"
+  },
+  "birds/chondestes-grammacus.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:390_I._Lark_Finch_-_2._Prairie_Finch_-_3._Brown_Song_Sparrow.jpg"
+  },
   "birds/chordeiles-minor-2.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-147-night-hawk.jpg"
@@ -1302,6 +1390,14 @@
   "birds/chroicocephalus-genei.webp": {
     "source": "bonaparte",
     "url": "https://archive.org/details/Iconografiadellt1c1Bona/page/n367"
+  },
+  "birds/chroicocephalus-philadelphia-2.webp": {
+    "source": "lilford",
+    "url": "https://archive.org/details/colouredfigureso06lilf_0/page/n83/mode/1up"
+  },
+  "birds/chroicocephalus-philadelphia.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer02rich_0/page/n595/mode/1up"
   },
   "birds/chroicocephalus-ridibundus-2.webp": {
     "source": "vonwright",
@@ -1542,6 +1638,14 @@
   "birds/contopus-cooperi.webp": {
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/File:Annual_report_(1912)_(18431073241).jpg"
+  },
+  "birds/contopus-sordidulus-2.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer02rich_0/page/n242/mode/1up"
+  },
+  "birds/contopus-sordidulus.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:434_I._Little_Tyrant_Fly-catcher_-_2._Small-headed_Fly-catcher_-_3._Blue_Mountain_Warbler_-_4._Bartran%27s_Vireo_-_5._Short-legged_Pewee_-_6._Rocky_Mountain_Fly-catcher.jpg"
   },
   "birds/contopus-virens.webp": {
     "source": "audubon",
@@ -1935,6 +2039,10 @@
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:54_Rice_Bird.jpg"
   },
+  "birds/dolichonyx-oryzivorus-3.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v2"
+  },
   "birds/dolichonyx-oryzivorus.webp": {
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:54_Rice_Bird.jpg"
@@ -1998,6 +2106,14 @@
   "birds/egretta-thula.webp": {
     "source": "dekay",
     "url": "https://digitalcollections.nypl.org/items/dad79380-c60d-012f-1be4-58d385a7bc34"
+  },
+  "birds/egretta-tricolor-2.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr06audu/page/n208/mode/1up"
+  },
+  "birds/egretta-tricolor.webp": {
+    "source": "gosse",
+    "url": "https://archive.org/details/Illustrationsbi00Goss/page/n96/mode/1up"
   },
   "birds/elanoides-forficatus.webp": {
     "source": "gould",
@@ -2115,6 +2231,18 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIIReed_Bunting.jpg"
   },
+  "birds/empidonax-difficilis.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n326/mode/1up"
+  },
+  "birds/empidonax-hammondii.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n326/mode/1up"
+  },
+  "birds/empidonax-minimus.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer02rich_0/page/n242/mode/1up"
+  },
   "birds/empidonax-virescens.webp": {
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:144_Small_Green_Crested_Flycatcher.jpg"
@@ -2126,6 +2254,10 @@
   "birds/eolophus-roseicapilla.webp": {
     "source": "gould",
     "url": "https://www.biodiversitylibrary.org/page/48400946"
+  },
+  "birds/eopsaltria-australis.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/48285759"
   },
   "birds/eremophila-alpestris.webp": {
     "source": "vonwright",
@@ -2427,6 +2559,14 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVCommon_Gallinule.jpg"
   },
+  "birds/gallinula-galeata-2.webp": {
+    "source": "frohawk",
+    "url": "https://archive.org/details/AvesHawaiienses00Wils/page/n313"
+  },
+  "birds/gallinula-galeata.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr05audu/page/n184/mode/1up"
+  },
   "birds/gallirallus-philippensis.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/13206"
@@ -2591,6 +2731,14 @@
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/purple-finch"
   },
+  "birds/halcyon-smyrnensis-2.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/37485838"
+  },
+  "birds/halcyon-smyrnensis.webp": {
+    "source": "keulemans",
+    "url": "https://www.biodiversitylibrary.org/page/43064736"
+  },
   "birds/haliaeetus-albicilla-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00301.jpg"
@@ -2646,6 +2794,14 @@
   "birds/himantopus-himantopus.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVLong-legged_Plover.jpg"
+  },
+  "birds/himantopus-mexicanus-2.webp": {
+    "source": "keulemans",
+    "url": "https://archive.org/details/avifaunaLaysannplatRoth/page/n162/mode/1up"
+  },
+  "birds/himantopus-mexicanus.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:Black-Necked_Stillt._Male_(NYPL_b13559627-108617).tiff"
   },
   "birds/hippolais-icterina-2.webp": {
     "source": "desmurs",
@@ -2723,9 +2879,57 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeVBlack-headed_Gull.jpg"
   },
+  "birds/icteria-virens-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:137_Yellow-breasted_Chat.jpg"
+  },
+  "birds/icteria-virens-3.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:137_Yellow-breasted_Chat.jpg"
+  },
+  "birds/icteria-virens-4.webp": {
+    "source": "prr",
+    "url": "https://archive.org/details/reportsofexplora61857unit/page/n536/mode/1up"
+  },
+  "birds/icteria-virens-5.webp": {
+    "source": "vieillot",
+    "url": "https://commons.wikimedia.org/wiki/File:Icteria_virens_-_1825-1834_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBA01_IZ16600285.tif"
+  },
+  "birds/icteria-virens.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:137_Yellow-breasted_Chat.jpg"
+  },
+  "birds/icterus-bullockii-2.webp": {
+    "source": "dawson",
+    "url": "https://archive.org/details/birdsofcalif192301daws/page/n140/mode/1up"
+  },
+  "birds/icterus-bullockii-3.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:433_I._Bullock%27s_Oriole_-_2._Baltimore_Oriole_-_3._Mexican_Goldfinch_-_4._Varied_Thrush_-_5._Common_Water_Thrush.jpg"
+  },
+  "birds/icterus-bullockii-4.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:433_I._Bullock%27s_Oriole_-_2._Baltimore_Oriole_-_3._Mexican_Goldfinch_-_4._Varied_Thrush_-_5._Common_Water_Thrush.jpg"
+  },
+  "birds/icterus-bullockii-5.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr04audu/page/n63/mode/1up"
+  },
+  "birds/icterus-bullockii.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:388_I._Nuttall%27s_Starling_-_2._Yellow-headed_Troopial_-_3._Bullock%27s_Oriole.jpg"
+  },
+  "birds/icterus-cucullatus.webp": {
+    "source": "cassin",
+    "url": "https://archive.org/details/illustrationsofb00cass/page/n70/mode/1up"
+  },
   "birds/icterus-galbula-2.webp": {
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_lore_(1922)_(14747962941).jpg"
+  },
+  "birds/icterus-galbula-3.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:433_I._Bullock%27s_Oriole_-_2._Baltimore_Oriole_-_3._Mexican_Goldfinch_-_4._Varied_Thrush_-_5._Common_Water_Thrush.jpg"
   },
   "birds/icterus-galbula.webp": {
     "source": "audubon",
@@ -2831,6 +3035,10 @@
     "source": "levaillant",
     "url": "https://commons.wikimedia.org/wiki/File:Laniarius_boulboul_-_1796-1808_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBA01_IZ16600477.tif"
   },
+  "birds/lanius-borealis.webp": {
+    "source": "fuertes",
+    "url": "https://archive.org/details/birdsofnewyork02eat/page/n738/mode/1up"
+  },
   "birds/lanius-collurio-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00064.jpg"
@@ -2854,6 +3062,26 @@
   "birds/lanius-excubitor.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIGreatShrike.jpg"
+  },
+  "birds/lanius-ludovicianus-2.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr04audu/page/n193/mode/1up"
+  },
+  "birds/lanius-ludovicianus-3.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
+  },
+  "birds/lanius-ludovicianus-4.webp": {
+    "source": "fuertes",
+    "url": "https://archive.org/details/birdsofnewyork02eat/page/n738/mode/1up"
+  },
+  "birds/lanius-ludovicianus-5.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n322/mode/1up"
+  },
+  "birds/lanius-ludovicianus.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer02rich_0/page/n204/mode/1up"
   },
   "birds/lanius-meridionalis.webp": {
     "source": "gould",
@@ -2894,6 +3122,10 @@
   "birds/larus-argentatus.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeVHerring_Gull.jpg"
+  },
+  "birds/larus-californicus.webp": {
+    "source": "elliot",
+    "url": "https://archive.org/details/newheretoforeun2elli/page/n100/mode/1up"
   },
   "birds/larus-canus-2.webp": {
     "source": "vonwright",
@@ -2963,6 +3195,10 @@
     "source": "dresser",
     "url": "https://archive.org/details/historyofbirdsof18dres/page/n531/mode/1up"
   },
+  "birds/larus-occidentalis.webp": {
+    "source": "elliot",
+    "url": "https://archive.org/details/newheretoforeun2elli/page/n100/mode/1up"
+  },
   "birds/leiothlypis-celata-2.webp": {
     "source": "horsfall",
     "url": "https://archive.org/details/warblersofnortha00chap/page/n116/mode/1up"
@@ -2971,9 +3207,29 @@
     "source": "dawson",
     "url": "https://archive.org/details/birdsofcaliforni01daws/page/n656/mode/1up"
   },
+  "birds/leiothlypis-peregrina-2.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer22rich/page/n334/mode/1up"
+  },
   "birds/leiothlypis-peregrina.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-154-tennessee-warbler.jpg"
+  },
+  "birds/leiothlypis-ruficapilla-2.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
+  },
+  "birds/leiothlypis-ruficapilla-3.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr02audu/page/n195/mode/1up"
+  },
+  "birds/leiothlypis-ruficapilla-4.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer22rich/page/n334/mode/1up"
+  },
+  "birds/leiothlypis-ruficapilla.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:89_Nashville_Warbler.jpg"
   },
   "birds/leucogeranus-leucogeranus.webp": {
     "source": "gould",
@@ -3143,6 +3399,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVBlack_Grouse.jpg"
   },
+  "birds/macropygia-phasianella.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/48401230"
+  },
   "birds/malurus-cyaneus.webp": {
     "source": "gould",
     "url": "https://www.biodiversitylibrary.org/page/48285751"
@@ -3215,6 +3475,22 @@
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/red-headed-woodpecker"
   },
+  "birds/melanerpes-formicivorus-2.webp": {
+    "source": "dawson",
+    "url": "https://archive.org/details/birdsofcaliforni02daws/page/n740/mode/1up"
+  },
+  "birds/melanerpes-formicivorus.webp": {
+    "source": "malherbe",
+    "url": "https://archive.org/details/Monographiedespt418Malh/page/n88/mode/1up"
+  },
+  "birds/melanerpes-uropygialis-2.webp": {
+    "source": "prr",
+    "url": "https://archive.org/details/reportsofexplora10unit/page/n646/mode/1up"
+  },
+  "birds/melanerpes-uropygialis.webp": {
+    "source": "prr",
+    "url": "https://archive.org/details/reportsofexplora10unit/page/n646/mode/1up"
+  },
   "birds/melanitta-fusca-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00265.jpg"
@@ -3278,6 +3554,10 @@
   "birds/melospiza-georgiana-2.webp": {
     "source": "fuertes",
     "url": "https://archive.org/details/birdlore151913nati/page/n265/mode/1up"
+  },
+  "birds/melospiza-georgiana-3.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
   },
   "birds/melospiza-georgiana.webp": {
     "source": "audubon",
@@ -3671,6 +3951,22 @@
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-19-louisiana-water-thrush.jpg"
   },
+  "birds/parkesia-noveboracensis-2.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n342/mode/1up"
+  },
+  "birds/parkesia-noveboracensis-3.webp": {
+    "source": "swainson",
+    "url": "https://archive.org/details/faunaborealiamer02rich_0/page/n336/mode/1up"
+  },
+  "birds/parkesia-noveboracensis-4.webp": {
+    "source": "sagra",
+    "url": "https://archive.org/details/histoirephysiqu3sagr/page/n36/mode/1up"
+  },
+  "birds/parkesia-noveboracensis.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:433_I._Bullock%27s_Oriole_-_2._Baltimore_Oriole_-_3._Mexican_Goldfinch_-_4._Varied_Thrush_-_5._Common_Water_Thrush.jpg"
+  },
   "birds/parus-cinereus.webp": {
     "source": "gould",
     "url": "https://archive.org/details/BirdsAsiaJohnGoIIGoul/page/n227"
@@ -3727,9 +4023,17 @@
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00070.jpg"
   },
+  "birds/passerculus-sandwichensis-2.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
+  },
   "birds/passerculus-sandwichensis.webp": {
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/File:Annual_report_(1912)_(18241602688).jpg"
+  },
+  "birds/passerella-iliaca-2.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
   },
   "birds/passerella-iliaca.webp": {
     "source": "audubon",
@@ -3875,6 +4179,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVRed-necked_Phalarope.jpg"
   },
+  "birds/phaps-chalcoptera.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/48401186"
+  },
   "birds/phasianus-colchicus-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00095.jpg"
@@ -3910,6 +4218,14 @@
   "birds/philemon-citreogularis.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/14090"
+  },
+  "birds/philemon-corniculatus-2.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/14098"
+  },
+  "birds/philemon-corniculatus.webp": {
+    "source": "sydneybirdpainter",
+    "url": "https://commons.wikimedia.org/wiki/File:SLNSW_823106_f55_Noisy_Friarbird_Philemon_corniculatus.jpg"
   },
   "birds/phoenicopterus-roseus.webp": {
     "source": "gould",
@@ -4291,6 +4607,10 @@
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/Category:Birds_of_New_York_(1912)#/media/File:Annual_report_(1912)_(17806778914).jpg"
   },
+  "birds/porphyrio-melanotus.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/48400862"
+  },
   "birds/porphyrio-porphyrio.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVHyacinthine_Porphyrio.jpg"
@@ -4371,6 +4691,10 @@
     "source": "ridgway",
     "url": "https://archive.org/details/cu31924084820350/page/n187/mode/1up"
   },
+  "birds/psaltriparus-minimus-4.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n234/mode/1up"
+  },
   "birds/psaltriparus-minimus.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/chesnut-backed-titmouse-black-capt-titmouse-and-chesnut-crowned-titmouse"
@@ -4382,6 +4706,10 @@
   "birds/psittacula-krameri.webp": {
     "source": "keulemans",
     "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Keulemans_Onze_vogels_3_09.jpg"
+  },
+  "birds/psophodes-olivaceus.webp": {
+    "source": "gould",
+    "url": "https://www.biodiversitylibrary.org/page/48285739"
   },
   "birds/pternistis-swainsonii.webp": {
     "source": "finchdavies",
@@ -4503,6 +4831,10 @@
     "source": "dekay",
     "url": "https://digitalcollections.nypl.org/items/510d47d9-76c4-a3d9-e040-e00a18064a99"
   },
+  "birds/recurvirostra-americana.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:The_birds_of_America_(Pl._353)_(8592710314).jpg"
+  },
   "birds/recurvirostra-avosetta-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00326.jpg"
@@ -4522,6 +4854,10 @@
   "birds/regulus-regulus.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00088.jpg"
+  },
+  "birds/regulus-satrapa-2.webp": {
+    "source": "bonaparte",
+    "url": "https://commons.wikimedia.org/wiki/File:Alexander_Lawson_after_Titian_Ramsay_Peale,_Swallow-tailed_Flycatcher,_Arkansas_Flycatcher,_Say%27s_Flycatcher,_and_Female_Golden-crested_Wren,_NGA_73718.jpg"
   },
   "birds/regulus-satrapa.webp": {
     "source": "audubon",
@@ -4591,6 +4927,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIStonechat.jpg"
   },
+  "birds/sayornis-nigricans-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:434_I._Little_Tyrant_Fly-catcher_-_2._Small-headed_Fly-catcher_-_3._Blue_Mountain_Warbler_-_4._Bartran%27s_Vireo_-_5._Short-legged_Pewee_-_6._Rocky_Mountain_Fly-catcher.jpg"
+  },
   "birds/sayornis-nigricans.webp": {
     "source": "swainson",
     "url": "https://commons.wikimedia.org/wiki/File:A_selection_of_the_birds_of_Brazil_and_Mexico_(Plate_69)_(5977794422).jpg"
@@ -4598,6 +4938,14 @@
   "birds/sayornis-phoebe.webp": {
     "source": "fuertes",
     "url": "https://www.fws.gov/media/eastern-phoebe"
+  },
+  "birds/sayornis-saya-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:359_I._Arkansaw_Flycatcher_-_2._Swallow-Tailed_Flycatcher_-_3._Says_Flycatcher.jpg"
+  },
+  "birds/sayornis-saya-3.webp": {
+    "source": "bonaparte",
+    "url": "https://commons.wikimedia.org/wiki/File:Alexander_Lawson_after_Titian_Ramsay_Peale,_Swallow-tailed_Flycatcher,_Arkansas_Flycatcher,_Say%27s_Flycatcher,_and_Female_Golden-crested_Wren,_NGA_73718.jpg"
   },
   "birds/sayornis-saya.webp": {
     "source": "audubon",
@@ -4643,6 +4991,14 @@
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:379_Ruff-necked_Humming-bird.jpg"
   },
+  "birds/selasphorus-sasin-2.webp": {
+    "source": "lesson",
+    "url": "https://archive.org/details/histoirenaturell00le/page/n214/mode/1up"
+  },
+  "birds/selasphorus-sasin.webp": {
+    "source": "lesson",
+    "url": "https://archive.org/details/Histoirenaturel00Less/page/n410/mode/1up"
+  },
   "birds/serinus-serinus.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIISerin_Finch.jpg"
@@ -4659,6 +5015,10 @@
     "source": "wilson",
     "url": "https://archive.org/details/Wilson5896-v2"
   },
+  "birds/setophaga-cerulea.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
+  },
   "birds/setophaga-citrina-2.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/hooded-warbler"
@@ -4666,6 +5026,10 @@
   "birds/setophaga-citrina-3.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/hooded-warbler"
+  },
+  "birds/setophaga-citrina-4.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
   },
   "birds/setophaga-citrina.webp": {
     "source": "audubon",
@@ -4682,6 +5046,14 @@
   "birds/setophaga-coronata.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/yellow-crown-warbler"
+  },
+  "birds/setophaga-dominica-2.webp": {
+    "source": "gosse",
+    "url": "https://archive.org/details/Illustrationsbi00Goss/page/n46/mode/1up"
+  },
+  "birds/setophaga-dominica.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:85_Yellow_Throated_Warbler.jpg"
   },
   "birds/setophaga-fusca.webp": {
     "source": "horsfall",
@@ -4739,6 +5111,10 @@
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-414-golden-winged-warbler.jpg"
   },
+  "birds/setophaga-townsendi-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:393_I._Townsend%27s_Warbler_-_2._Arctic_Blue-bird_-_3._Western_Blue-bird.jpg"
+  },
   "birds/setophaga-townsendi.webp": {
     "source": "fuertes",
     "url": "https://www.biodiversitylibrary.org/page/9165834"
@@ -4751,13 +5127,45 @@
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-393-townsends-warbler.jpg"
   },
+  "birds/sialia-currucoides-3.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:393_I._Townsend%27s_Warbler_-_2._Arctic_Blue-bird_-_3._Western_Blue-bird.jpg"
+  },
+  "birds/sialia-currucoides-4.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:393_I._Townsend%27s_Warbler_-_2._Arctic_Blue-bird_-_3._Western_Blue-bird.jpg"
+  },
   "birds/sialia-currucoides.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-393-townsends-warbler.jpg"
   },
+  "birds/sialia-mexicana-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:393_I._Townsend%27s_Warbler_-_2._Arctic_Blue-bird_-_3._Western_Blue-bird.jpg"
+  },
+  "birds/sialia-mexicana-3.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:393_I._Townsend%27s_Warbler_-_2._Arctic_Blue-bird_-_3._Western_Blue-bird.jpg"
+  },
+  "birds/sialia-mexicana-4.webp": {
+    "source": "dawson",
+    "url": "https://archive.org/details/birdsofcaliforni02daws/page/n390/mode/1up"
+  },
+  "birds/sialia-mexicana-5.webp": {
+    "source": "holmes",
+    "url": "https://commons.wikimedia.org/wiki/File:Birds_of_the_West,_an_account_of_the_lives_and_the_labors_of_our_feathered_friends_(1907)_(20385152745).jpg"
+  },
+  "birds/sialia-mexicana.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr02audu/page/n312/mode/1up"
+  },
   "birds/sialia-sialis-2.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-113-blue-bird.jpg"
+  },
+  "birds/sialia-sialis-3.webp": {
+    "source": "holmes",
+    "url": "https://commons.wikimedia.org/wiki/File:Birds_of_the_West,_an_account_of_the_lives_and_the_labors_of_our_feathered_friends_(1907)_(20385152745).jpg"
   },
   "birds/sialia-sialis.webp": {
     "source": "audubon",
@@ -4855,6 +5263,10 @@
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/14270"
   },
+  "birds/sphyrapicus-thyroideus.webp": {
+    "source": "prr",
+    "url": "https://archive.org/details/reportsofexplora61857unit/page/n536/mode/1up"
+  },
   "birds/sphyrapicus-varius-2.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-190-yellow-bellied-woodpecker.jpg"
@@ -4874,6 +5286,10 @@
   "birds/spinus-pinus.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/pine-finch"
+  },
+  "birds/spinus-psaltria-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:433_I._Bullock%27s_Oriole_-_2._Baltimore_Oriole_-_3._Mexican_Goldfinch_-_4._Varied_Thrush_-_5._Common_Water_Thrush.jpg"
   },
   "birds/spinus-psaltria.webp": {
     "source": "audubon",
@@ -4975,6 +5391,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeVRoseate_Tern.jpg"
   },
+  "birds/sterna-forsteri.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr07audu/page/n137/mode/1up"
+  },
   "birds/sterna-hirundo-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00058.jpg"
@@ -5002,6 +5422,10 @@
   "birds/strepera-graculina.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_by_Elizabeth_Gould_for_Birds_of_Australia,_digitally_enhanced_from_rawpixel%27s_own_facsimile_book78.jpg"
+  },
+  "birds/strepera-versicolor.webp": {
+    "source": "gould",
+    "url": "https://archive.org/details/birdsaustralia2goul/page/n111"
   },
   "birds/streptopelia-decaocto.webp": {
     "source": "keulemans",
@@ -5207,6 +5631,10 @@
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVLittle_Bustard.jpg"
   },
+  "birds/thalasseus-maximus.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr07audu/page/n100/mode/1up"
+  },
   "birds/thalasseus-sandvicensis-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00180.jpg"
@@ -5243,6 +5671,10 @@
     "source": "fuertes",
     "url": "https://archive.org/details/annualreport6631912newy/page/n790/mode/1up"
   },
+  "birds/thryothorus-ludovicianus-3.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v2"
+  },
   "birds/thryothorus-ludovicianus.webp": {
     "source": "audubon",
     "url": "https://media.audubon.org/boa_illustration/plate-78-great-carolina-wren.jpg"
@@ -5266,6 +5698,14 @@
   "birds/todiramphus-sanctus.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/15090"
+  },
+  "birds/toxostoma-curvirostre-2.webp": {
+    "source": "emory",
+    "url": "https://archive.org/details/mobot31753002023650/page/n136/mode/1up"
+  },
+  "birds/toxostoma-curvirostre.webp": {
+    "source": "temminck",
+    "url": "https://archive.org/details/Nouveaurecueild4Temm/page/n251/mode/1up"
   },
   "birds/toxostoma-rufum-2.webp": {
     "source": "fuertes",
@@ -5483,9 +5923,45 @@
     "source": "gronvold",
     "url": "https://commons.wikimedia.org/wiki/File:ChalcopeliaGronvold.jpg"
   },
+  "birds/tympanuchus-cupido.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
+  },
+  "birds/tyrannus-forficatus-2.webp": {
+    "source": "bonaparte",
+    "url": "https://commons.wikimedia.org/wiki/File:Alexander_Lawson_after_Titian_Ramsay_Peale,_Swallow-tailed_Flycatcher,_Arkansas_Flycatcher,_Say%27s_Flycatcher,_and_Female_Golden-crested_Wren,_NGA_73718.jpg"
+  },
+  "birds/tyrannus-forficatus.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:359_I._Arkansaw_Flycatcher_-_2._Swallow-Tailed_Flycatcher_-_3._Says_Flycatcher.jpg"
+  },
   "birds/tyrannus-tyrannus.webp": {
     "source": "fuertes",
     "url": "https://commons.wikimedia.org/wiki/Category:Birds_of_New_York_(1912)#/media/File:Annual_report_(1912)_(18431073241).jpg"
+  },
+  "birds/tyrannus-verticalis-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:359_I._Arkansaw_Flycatcher_-_2._Swallow-Tailed_Flycatcher_-_3._Says_Flycatcher.jpg"
+  },
+  "birds/tyrannus-verticalis-3.webp": {
+    "source": "audubon",
+    "url": "https://archive.org/details/birdsofamericafr01audu/page/n311/mode/1up"
+  },
+  "birds/tyrannus-verticalis-4.webp": {
+    "source": "fuertes",
+    "url": "https://archive.org/details/foodofourmoreimp44beal/page/n32/mode/1up"
+  },
+  "birds/tyrannus-verticalis-5.webp": {
+    "source": "bonaparte",
+    "url": "https://commons.wikimedia.org/wiki/File:Alexander_Lawson_after_Titian_Ramsay_Peale,_Swallow-tailed_Flycatcher,_Arkansas_Flycatcher,_Say%27s_Flycatcher,_and_Female_Golden-crested_Wren,_NGA_73718.jpg"
+  },
+  "birds/tyrannus-verticalis.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:359_I._Arkansaw_Flycatcher_-_2._Swallow-Tailed_Flycatcher_-_3._Says_Flycatcher.jpg"
+  },
+  "birds/tyrannus-vociferans.webp": {
+    "source": "emory",
+    "url": "https://archive.org/details/mobot31753002023650/page/n133/mode/1up"
   },
   "birds/tyto-alba-2.webp": {
     "source": "vonwright",
@@ -5551,6 +6027,10 @@
     "source": "gordon",
     "url": "https://commons.wikimedia.org/wiki/File:Vidua_macroura_(Dominikanerwida)_en_sprinkhaan,_RP-T-1914-17-282.jpg"
   },
+  "birds/vireo-cassinii.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n334/mode/1up"
+  },
   "birds/vireo-flavifrons.webp": {
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:119_Yellow-throated_Vireo.jpg"
@@ -5563,13 +6043,33 @@
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/white-eyed-flycatcher-or-vireo"
   },
+  "birds/vireo-huttoni.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n334/mode/1up"
+  },
+  "birds/vireo-olivaceus-2.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v2"
+  },
   "birds/vireo-olivaceus.webp": {
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:150_Red-eyed_Vireo.jpg"
   },
+  "birds/vireo-philadelphicus.webp": {
+    "source": "baird",
+    "url": "https://archive.org/details/birdsofnorthamer1860bair/page/n334/mode/1up"
+  },
   "birds/vireo-solitarius.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/vireo-solitarius"
+  },
+  "birds/xanthocephalus-xanthocephalus-2.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:388_I._Nuttall%27s_Starling_-_2._Yellow-headed_Troopial_-_3._Bullock%27s_Oriole.jpg"
+  },
+  "birds/xanthocephalus-xanthocephalus.webp": {
+    "source": "audubon",
+    "url": "https://commons.wikimedia.org/wiki/File:388_I._Nuttall%27s_Starling_-_2._Yellow-headed_Troopial_-_3._Bullock%27s_Oriole.jpg"
   },
   "birds/xema-sabini.webp": {
     "source": "gould",
@@ -5602,6 +6102,10 @@
   "birds/zenaida-macroura.webp": {
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:Zenaida_macrouraAWP17AA.jpg"
+  },
+  "birds/zonotrichia-albicollis-2.webp": {
+    "source": "wilson",
+    "url": "https://archive.org/details/Wilson5896-v3"
   },
   "birds/zonotrichia-albicollis.webp": {
     "source": "audubon",
