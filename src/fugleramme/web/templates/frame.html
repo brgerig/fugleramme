@@ -2,7 +2,7 @@
    has a panel to lay the page out for - an Inky, else the external one. Rows
    that need one are always rendered with their declarations, and disabled
    without one, so a save then leaves the stored values alone. #}
-{% from "macros.html" import options, checkbox, hint %}
+{% from "macros.html" import options, checkbox, hint, timepicker %}
 {% macro slider(field, caption, value) -%}
 <label><span><span class="caption">{{ caption }}</span> <small>{{ value }}%</small></span><input type="range" name="{{ field }}" min="0" max="{{ MARGIN_CEILING }}" step="1" value="{{ value }}"></label>
 {%- endmacro %}
@@ -43,6 +43,11 @@
     <select name="rotation">{{ options(rotations, settings.rotation) }}</select></label>
   <label><span>Refresh {{ hint("How long the panel holds a page before new birds may change it") }}</span>
     <select name="refresh_minutes">{{ options(refreshes, settings.refresh_minutes) }}</select></label>
+  <label><span>Quiet hours {{ hint("Keep the panel from waking up during this time") }}</span>
+    {% call checkbox("quiet_hours", settings.quiet_hours) %}Enable{% endcall %}
+    <div class="sub" id="quiet-times" {{ flags(hidden=not settings.quiet_hours) }}>{% call timepicker("quiet_start", settings.quiet_start, "Start") %}{% endcall %} {% call timepicker("quiet_end", settings.quiet_end, "End") %}{% endcall %}</div>
+  </label>
+
 </div>
 
 <div class="card">

@@ -32,6 +32,10 @@
 <label{% if kind %} data-kind="{{ kind }}"{% endif %}{{ flags(hidden=not shown) }}><span>{{ caller() }}{% if hint %} <small>{{ hint }}</small>{% endif %}</span><input{{ flags(disabled=not shown) }}{% if url %} inputmode="url"{% endif %}{% if type == "password" %} autocomplete="new-password"{% endif %} type="{{ type }}" name="{{ field }}" value="{{ value }}"></label>
 {%- endmacro %}
 
+{% macro timepicker(field, value, hint="", shown=true) -%}
+<label class="src" {{ flags(hidden=not shown) }}><span>{{ caller() }}{% if hint %} <small>{{ hint }}</small>{% endif %}</span><input{{ flags(disabled=not shown) }} type="time" name="{{ field }}" value="{{ value }}"></label>
+{%- endmacro %}
+
 {# The note beside a field label. A span, not a button: a <label> may hold only
    one labelable element and that is the select. admin.css draws the bubble from
    `aria-label`, so one attribute is both the text and the name. #}

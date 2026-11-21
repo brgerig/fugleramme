@@ -90,6 +90,8 @@ REFRESH_OPTIONS = (
     (60, "At most every hour"),
 )
 
+DEFAULT_QUIET_START = "22:00"
+DEFAULT_QUIET_END = "07:00"
 
 # A quarter off each edge already leaves half the page, so margin stops here.
 MARGIN_CEILING = 25
@@ -120,6 +122,9 @@ class Settings:
     external_panel_size: str = SAME_AS_INKY
     lookback_hours: float = 24
     refresh_minutes: int = 0
+    quiet_hours: bool = False
+    quiet_start: str = DEFAULT_QUIET_START
+    quiet_end: str = DEFAULT_QUIET_END
     # The collage's own default, as a percent.
     margin: int = round(DEFAULT_MARGIN * 100)
     # The panel's edges while unlocked, on the glass unrotated. None follows `margin`.
@@ -373,6 +378,9 @@ def _coerce(raw: dict, base: Settings | None = None) -> Settings:
         ),
         lookback_hours=_as_hours(raw.get("lookback_hours"), d.lookback_hours),
         refresh_minutes=_as_int(raw.get("refresh_minutes"), d.refresh_minutes, 0, 24 * 60),
+        quiet_hours=_as_bool(raw.get("quiet_hours"), d.quiet_hours),
+        quiet_start=_text(raw.get("quiet_start"), d.quiet_start),
+        quiet_end=_text(raw.get("quiet_end"), d.quiet_end),
         margin=_as_int(raw.get("margin"), d.margin, 0, MARGIN_CEILING),
         margin_lock=_as_bool(raw.get("margin_lock"), d.margin_lock),
         margin_top=_as_edge(raw.get("margin_top"), d.margin_top),

@@ -96,6 +96,11 @@ function syncMargin() {
   });
 }
 
+const quietTimes = document.getElementById("quiet-times");
+function syncQuiet() {
+  reveal(quietTimes, form.quiet_hours.checked);
+}
+
 function sync() {
   syncMode();
   syncPanel();
@@ -103,6 +108,7 @@ function sync() {
   syncNames();
   syncSizes();
   syncMargin();
+  syncQuiet();
 }
 
 // A slider renders on release, or a keyboard step. A changed margin also shows
