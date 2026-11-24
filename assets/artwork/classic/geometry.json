@@ -47,6 +47,18 @@
    760
   ]
  },
+ "birds/acanthorhynchus-tenuirostris.webp": {
+  "box": [
+   0.3899,
+   0.3852,
+   0.6882,
+   0.5398
+  ],
+  "cut": [
+   697,
+   1200
+  ]
+ },
  "birds/accipiter-nisus-2.webp": {
   "box": [
    0.0319324126066985,
@@ -345,6 +357,18 @@
   "cut": [
    1069,
    1087
+  ]
+ },
+ "birds/aegotheles-cristatus.webp": {
+  "box": [
+   0.1132,
+   0.4889,
+   0.609,
+   0.7285
+  ],
+  "cut": [
+   950,
+   1200
   ]
  },
  "birds/aegypius-monachus.webp": {
@@ -2840,6 +2864,18 @@
   ],
   "cut": [
    777,
+   1200
+  ]
+ },
+ "birds/cacomantis-variolosus.webp": {
+  "box": [
+   0.3506,
+   0.4347,
+   0.8879,
+   0.8444
+  ],
+  "cut": [
+   871,
    1200
   ]
  },
@@ -7703,6 +7739,18 @@
    626
   ]
  },
+ "birds/gallinula-tenebrosa.webp": {
+  "box": [
+   0.1651,
+   0.1893,
+   0.6699,
+   0.6697
+  ],
+  "cut": [
+   1200,
+   691
+  ]
+ },
  "birds/gallirallus-philippensis.webp": {
   "box": [
    0.1792,
@@ -7941,6 +7989,30 @@
   "cut": [
    1200,
    926
+  ]
+ },
+ "birds/gerygone-mouki-2.webp": {
+  "box": [
+   0.023011455499696097,
+   0.3229500272938908,
+   0.4953041285678229,
+   0.6108378219604492
+  ],
+  "cut": [
+   791,
+   1200
+  ]
+ },
+ "birds/gerygone-mouki.webp": {
+  "box": [
+   0.2593000598419878,
+   0.7667848205566407,
+   0.8415159477402878,
+   0.9264762340349533
+  ],
+  "cut": [
+   798,
+   1200
   ]
  },
  "birds/glareola-pratincola.webp": {
@@ -9743,6 +9815,18 @@
    692
   ]
  },
+ "birds/leucosarcia-melanoleuca.webp": {
+  "box": [
+   0.2643,
+   0.2879,
+   0.8693,
+   0.8262
+  ],
+  "cut": [
+   1200,
+   717
+  ]
+ },
  "birds/limosa-lapponica-2.webp": {
   "box": [
    0.011028088331222534,
@@ -10655,6 +10739,30 @@
    1200
   ]
  },
+ "birds/meliphaga-lewinii-2.webp": {
+  "box": [
+   0.1506,
+   0.018,
+   0.6713,
+   0.8631
+  ],
+  "cut": [
+   1096,
+   1200
+  ]
+ },
+ "birds/meliphaga-lewinii.webp": {
+  "box": [
+   0.0501,
+   0.0547,
+   0.8252,
+   0.8456
+  ],
+  "cut": [
+   1200,
+   914
+  ]
+ },
  "birds/melospiza-georgiana-2.webp": {
   "box": [
    0.24308299907604883,
@@ -10748,6 +10856,18 @@
   ],
   "cut": [
    935,
+   1200
+  ]
+ },
+ "birds/menura-novaehollandiae.webp": {
+  "box": [
+   0.0663,
+   0.4469,
+   0.6085,
+   0.8549
+  ],
+  "cut": [
+   819,
    1200
   ]
  },
@@ -14603,6 +14723,18 @@
    1200
   ]
  },
+ "birds/rhipidura-albiscapa.webp": {
+  "box": [
+   0.1124,
+   0.2715,
+   0.7243,
+   0.9188
+  ],
+  "cut": [
+   1097,
+   1200
+  ]
+ },
  "birds/rhipidura-leucophrys.webp": {
   "box": [
    0.017,
@@ -18369,6 +18501,18 @@
   "cut": [
    1200,
    1030
+  ]
+ },
+ "birds/zosterops-lateralis.webp": {
+  "box": [
+   0.3343,
+   0.2605,
+   0.4797,
+   0.463
+  ],
+  "cut": [
+   775,
+   1200
   ]
  },
  "birds/zosterops-simplex.webp": {

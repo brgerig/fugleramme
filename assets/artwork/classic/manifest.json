@@ -15,6 +15,10 @@
     "source": "gould",
     "url": "https://www.biodiversitylibrary.org/page/48285944"
   },
+  "birds/acanthorhynchus-tenuirostris.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/14086"
+  },
   "birds/accipiter-nisus-2.webp": {
     "source": "vonwright",
     "url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00031.jpg"
@@ -114,6 +118,10 @@
   "birds/aegolius-funereus.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsIEuropeITengmalms_Owl.jpg"
+  },
+  "birds/aegotheles-cristatus.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/15170"
   },
   "birds/aegypius-monachus.webp": {
     "source": "gould",
@@ -946,6 +954,10 @@
   "birds/cacomantis-flabelliformis.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/13986"
+  },
+  "birds/cacomantis-variolosus.webp": {
+    "source": "gould",
+    "url": "https://archive.org/details/birdsAustraliav4Goul/page/n359/mode/1up"
   },
   "birds/calamospiza-melanocorys.webp": {
     "source": "audubon",
@@ -2567,6 +2579,10 @@
     "source": "audubon",
     "url": "https://archive.org/details/birdsofamericafr05audu/page/n184/mode/1up"
   },
+  "birds/gallinula-tenebrosa.webp": {
+    "source": "gould",
+    "url": "https://archive.org/details/birdsAustraliav6Goul/page/n299/mode/1up"
+  },
   "birds/gallirallus-philippensis.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/13206"
@@ -2646,6 +2662,14 @@
   "birds/geothlypis-trichas.webp": {
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/roscoes-yellow-throat"
+  },
+  "birds/gerygone-mouki-2.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/14782"
+  },
+  "birds/gerygone-mouki.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/14782"
   },
   "birds/glareola-pratincola.webp": {
     "source": "gould",
@@ -3247,6 +3271,10 @@
     "source": "audubon",
     "url": "https://commons.wikimedia.org/wiki/File:The_birds_of_America_(Pl._443)_(8594210331).jpg"
   },
+  "birds/leucosarcia-melanoleuca.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/13644"
+  },
   "birds/limosa-lapponica-2.webp": {
     "source": "vonwright",
     "url": "https://www.rawpixel.com/image/8864773/image-public-domain-bird-animal"
@@ -3551,6 +3579,14 @@
     "source": "audubon",
     "url": "https://www.audubon.org/art/birds-of-america/wild-turkey"
   },
+  "birds/meliphaga-lewinii-2.webp": {
+    "source": "gould",
+    "url": "https://archive.org/details/birdsAustraliav4Goul/page/n139/mode/1up"
+  },
+  "birds/meliphaga-lewinii.webp": {
+    "source": "gould",
+    "url": "https://archive.org/details/birdsAustraliav4Goul/page/n139/mode/1up"
+  },
   "birds/melospiza-georgiana-2.webp": {
     "source": "fuertes",
     "url": "https://archive.org/details/birdlore151913nati/page/n265/mode/1up"
@@ -3582,6 +3618,10 @@
   "birds/melozone-crissalis.webp": {
     "source": "elliot",
     "url": "https://archive.org/details/newheretoforeun1elli/page/n96/mode/1up"
+  },
+  "birds/menura-novaehollandiae.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/14684"
   },
   "birds/mergellus-albellus-2.webp": {
     "source": "vonwright",
@@ -4867,6 +4907,10 @@
     "source": "dresser",
     "url": "https://archive.org/details/historyofbirdsof13dres/page/n215/mode/1up"
   },
+  "birds/rhipidura-albiscapa.webp": {
+    "source": "gould",
+    "url": "https://archive.org/details/birdsAustraliav2Goul/page/n339/mode/1up"
+  },
   "birds/rhipidura-leucophrys.webp": {
     "source": "gould",
     "url": "https://digital.lib.ku.edu/ku-gould/14830"
@@ -6122,6 +6166,10 @@
   "birds/zoothera-aurea.webp": {
     "source": "gould",
     "url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIIWhitesThrush.jpg"
+  },
+  "birds/zosterops-lateralis.webp": {
+    "source": "gould",
+    "url": "https://digital.lib.ku.edu/ku-gould/14006"
   },
   "birds/zosterops-simplex.webp": {
     "source": "gould",

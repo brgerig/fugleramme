@@ -34,6 +34,7 @@ import socket
 import threading
 import time
 from dataclasses import replace
+from datetime import datetime
 from http.cookies import CookieError, SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -251,12 +252,14 @@ def make_handler(
             self.end_headers()
             self._body(body)
 
-        def _send_cached(self, body: bytes, content_type: str):
+        def _send_cached(self, body: bytes, content_type: str, extra: dict[str, str] | None = None):
             # no-cache + ETag lets an unchanged refresh return a bodyless 304.
             etag = _etag(body)
             if self.headers.get("If-None-Match") == etag:
                 self.send_response(304)
                 self.send_header("ETag", etag)
+                for name, value in (extra or {}).items():
+                    self.send_header(name, value)
                 self.end_headers()
                 return
             self.send_response(200)
@@ -264,6 +267,8 @@ def make_handler(
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-cache")
             self.send_header("ETag", etag)
+            for name, value in (extra or {}).items():
+                self.send_header(name, value)
             self.end_headers()
             self._body(body)
 
@@ -479,15 +484,25 @@ def make_handler(
             settings = replace(self._edited(), web_lock=True)
             self._send_cached(modes.png_bytes(self._context(settings)), "image/png")
 
+        def _client_headers(self) -> dict[str, str]:
+            """The Rotation setting and the frame's local time, on every answer to an
+            external panel's client. A refusal and a 304 carry them too: the client draws
+            its own message then, and may have kept its ETag through a deep sleep but not
+            which way it hangs. The time spares a battery client NTP and a timezone."""
+            return {
+                "Fugleramme-Rotation": str(store.get().rotation),
+                "Fugleramme-Time": datetime.now().astimezone().isoformat(timespec="seconds"),
+            }
+
         def _external_frame(self) -> Frame | None:
             """The loop's page for an external panel, or None once refused. Not a
             render of its own: it is already dithered, paced and held through an outage."""
             if not store.get().external_panel:
-                self._send(404, b"not found", "text/plain")
+                self._send(404, b"not found", "text/plain", self._client_headers())
                 return None
             frame = status.frame  # once: the loop may hand over a page between two reads
             if frame is None:
-                self._send(503, b"no page rendered yet", "text/plain")
+                self._send(503, b"no page rendered yet", "text/plain", self._client_headers())
             return frame
 
         def _e6(self):
@@ -496,12 +511,13 @@ def make_handler(
             if frame is None:
                 return
             if tuple(sorted(frame[0].size, reverse=True)) not in e6.GLASSES:
-                self._send(404, b'/frame.e6 is only for the 7.3" and 13.3" panels', "text/plain")
+                refusal = b'/frame.e6 is only for the 7.3" and 13.3" panels'
+                self._send(404, refusal, "text/plain", self._client_headers())
                 return
             poll = store.get().refresh_minutes
             if packed is None or packed[0] is not frame or packed[1] != poll:
                 packed = (frame, poll, e6.encode(*frame, poll))
-            self._send_cached(packed[2], "application/octet-stream")
+            self._send_cached(packed[2], "application/octet-stream", self._client_headers())
 
         def _frame_png(self):
             # For a panel driven through inky: in the panel's native orientation, so it
@@ -514,7 +530,7 @@ def make_handler(
                 buffer = io.BytesIO()
                 to_glass(*frame).save(buffer, format="PNG")
                 pictured = (frame, buffer.getvalue())
-            self._send_cached(pictured[1], "image/png")
+            self._send_cached(pictured[1], "image/png", self._client_headers())
 
         def _state(self):
             # Cheap enough to poll: one grouped query, no render.
